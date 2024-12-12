@@ -1,0 +1,103 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f9f9f9;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+  }
+  
+  /* Contenedor principal */
+  .text-center {
+    text-align: center;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+  }
+  
+  /* Logo */
+  .text-center img {
+    border-radius: 50%;
+  }
+  
+  /* Título */
+  .text-center h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #4a4a4a;
+  }
+  
+  /* Texto de instrucción */
+  .text-center p {
+    font-size: 1rem;
+    color: #666666;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilo del input */
+  .text-center input {
+    width: 100%;
+    max-width: 300px;
+    font-size: 1rem;
+    padding: 5px;
+    text-align: center;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  .text-center input:focus {
+    border-color: #6b41b6;
+  }
+  
+  /* Indicador de caracteres */
+  .text-center .text-gray-500 {
+    font-size: 0.9rem;
+    color: #999999;
+    margin-top: 5px;
+  }
+  
+  /* Botón de acción principal */
+  .text-center button {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .text-center button[disabled] {
+    background-color: #e0e0e0; 
+    color: #b3b3b3; 
+    cursor: not-allowed;
+  }
+  
+  .text-center button:not([disabled]) {
+    background-color: #6b41b6; 
+    color: white; 
+  }
+  
+  .text-center button:not([disabled]):hover {
+    background-color: #6b41b6;
+  }
+  
+  /* Botón de retroceso */
+  .text-center .text-2xl {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #333333;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .text-center .text-2xl:hover {
+    color: #5e09a4;
+  }
