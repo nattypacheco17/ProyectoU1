@@ -1,0 +1,77 @@
+.game-waiting-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.game-logo {
+  width: 150px;
+  margin-bottom: 10px;
+}
+
+.game-title {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.player-info {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 15px;
+  background-color: #f4f4f4;
+  padding: 10px 15px;
+  border-radius: 30px;
+  font-size: 1.2em;
+}
+
+.player-icon {
+  margin-right: 10px;
+}
+
+.invite-code {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.copy-button {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.copy-button:hover {
+  background-color: #555;
+}
+
+
+
+
+.loading-dots {
+  display: inline-block;
+  animation: wave 1.5s infinite ease-in-out;
+  font-size: 24px; /* Ajusta el tamaño de los puntos según tu diseño */
+  margin-left: 2px;
+}
+
+.loading-dots:nth-child(1) {
+  animation-delay: 0s;
+}
+.loading-dots:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.loading-dots:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); /* Altura de la ola */
+  }
+}

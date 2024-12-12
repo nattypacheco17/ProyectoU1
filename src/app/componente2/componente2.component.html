@@ -1,0 +1,22 @@
+<div class="game-waiting-container">
+  <img src="assets/logo.png" alt="Cuarenta.IO Logo" class="game-logo">
+
+  <h2 class="game-title">CUARENTA.IO</h2>
+
+  <p>Esperando a otros jugadores </p>
+  <p><span class="loading-dots">.</span><span class="loading-dots">.</span><span class="loading-dots">.</span></p>
+
+
+  <!-- Mostrar nombre del jugador -->
+  <div class="player-info">
+    <span class="player-icon">👤</span>
+    <span class="player-name">{{ playerName }}</span>
+  </div>
+
+  <!-- Mostrar código de invitación -->
+  <p>Comparte el código con un amigo para que se una a la partida</p>
+  <div class="invite-code">{{ gameCode }}</div>
+
+  <!-- Botón para copiar el código -->
+  <button (click)="copyCode()" class="copy-button">COPIAR</button>
+</div>
