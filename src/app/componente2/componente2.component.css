@@ -4,18 +4,22 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
-  background-color: #f9f9f9;
+  background-image: url('https://img.freepik.com/vector-gratis/fondo-mesa-poquer-diseno-plano_23-2151047005.jpg?t=st=1734024517~exp=1734028117~hmac=3f4fd00642959f93060b9e13abf84a07770d21c5cd7c2cb90d532ec6f1a44bae&w=996'); /* Añadir la imagen de fondo */
+  background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
   font-family: 'Arial', sans-serif;
   color: #333;
 }
 
 .text-center {
   text-align: center;
-  padding: 40px;
-  background-color: #ffffff;
+  padding: 20px 40px; /* Reducir padding en los lados para que el fondo sea más visible */
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con algo de transparencia */
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  width: 100%;
+  width: 80%; /* Reducir el ancho al 80% para que haya más espacio para el fondo alrededor */
+  max-width: 600px; /* Establecer un ancho máximo para que no se expanda demasiado */
 }
 
 .text-center img {
