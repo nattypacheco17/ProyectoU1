@@ -1,17 +1,56 @@
-.game-waiting-container {
-  text-align: center;
-  padding: 20px;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f9f9f9;
+  font-family: 'Arial', sans-serif;
+  color: #333;
 }
 
-.game-logo {
-  width: 150px;
+.text-center {
+  text-align: center;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.text-center img {
+  border-radius: 50%;
+}
+
+.text-center h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4a4a4a;
+}
+
+.text-center p {
+  font-size: 1rem;
+  color: #666666;
   margin-bottom: 10px;
 }
 
-.game-title {
-  font-size: 2em;
+.text-center button {
+  font-size: 1rem;
   font-weight: bold;
-  margin-bottom: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.text-center button:not([disabled]) {
+  background-color: #6b41b6;
+  color: white;
+}
+
+.text-center button:not([disabled]):hover {
+  background-color: #5e09a4;
 }
 
 .player-info {
@@ -47,22 +86,35 @@
   background-color: #555;
 }
 
+.cancel-button {
+  background-color: #ff4c4c;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+}
 
-
+.cancel-button:hover {
+  background-color: #ff1f1f;
+}
 
 .loading-dots {
   display: inline-block;
   animation: wave 1.5s infinite ease-in-out;
-  font-size: 24px; /* Ajusta el tamaño de los puntos según tu diseño */
+  font-size: 24px;
   margin-left: 2px;
 }
 
 .loading-dots:nth-child(1) {
   animation-delay: 0s;
 }
+
 .loading-dots:nth-child(2) {
   animation-delay: 0.2s;
 }
+
 .loading-dots:nth-child(3) {
   animation-delay: 0.4s;
 }
@@ -72,6 +124,6 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px); /* Altura de la ola */
+    transform: translateY(-10px);
   }
 }
