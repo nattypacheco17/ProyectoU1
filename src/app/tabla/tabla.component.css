@@ -1,48 +1,56 @@
+/* Estilos generales para un contenedor con una tabla y un modal interactivo */
+
+/* Contenedor principal: diseño centrado con Flexbox */
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  text-align: center; /* Alinea el texto */
+  text-align: center; /* Alineación de texto al centro */
   font-family: 'Arial', sans-serif;
-  background-color: #faf3ff;
+  background-color: #faf3ff; /* Fondo claro */
   padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 50%;
-  margin: 50px auto;
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  max-width: 50%; /* Limita el ancho */
+  margin: 50px auto; /* Centra el contenedor con margen superior */
 }
 
+/* Estilo del encabezado h1 */
 h1 {
-  color: #2c2b2e;
+  color: #2c2b2e; /* Color de texto oscuro */
   font-size: 1.8em;
   margin-bottom: 5px;
-  font-family: 'Georgia', serif;
+  font-family: 'Georgia', serif; /* Fuente serif */
 }
 
+/* Estilo del logo */
 .logo {
-  max-width:100px;
+  max-width: 100px;
   height: 100px;
-  margin-left:45px;
+  margin-left: 45px; /* Desplazamiento izquierdo */
 }
 
+/* Estilo de la tabla */
 .tabla {
   width: 100%;
   border-collapse: separate;
-  border-spacing: 6px;
+  border-spacing: 6px; /* Espaciado entre celdas */
   margin: 8px 0;
   font-size: 0.9em;
   color: #4a4a4a;
 }
 
+/* Estilo de los encabezados de la tabla */
 .tabla th {
   color: #fff;
   padding: 8px;
   border-radius: 5px;
   font-size: 1.1em;
-  text-transform: uppercase;
+  text-transform: uppercase; /* Mayúsculas */
 }
 
+/* Estilo de celdas con la clase .jugador-header */
 .tabla .jugador-header {
   background-color: #6b41b6;
   color: #fff;
@@ -53,14 +61,16 @@ h1 {
   font-size: 1em;
 }
 
+/* Estilo de celdas generales */
 .tabla td {
   text-align: center;
   padding: 6px;
-  background-color: #e1b9fd;
+  background-color: #e1b9fd; /* Fondo morado claro */
   font-size: 0.8em;
   border-radius: 5px;
 }
 
+/* Estilo de celdas especiales */
 .tabla .especial {
   background-color: #6B41B6;
   font-weight: bold;
@@ -69,6 +79,7 @@ h1 {
   border-radius: 5px;
 }
 
+/* Estilo para la fila de fichas */
 .fichas-row {
   background-color: #f3e8ff;
   font-weight: bold;
@@ -76,6 +87,7 @@ h1 {
   color: #472293;
 }
 
+/* Estilo para inputs de puntos */
 .input-puntos {
   width: 75%;
   padding: 6px;
@@ -89,6 +101,7 @@ h1 {
   outline: none;
 }
 
+/* Estilo de la fila total */
 .total-row td {
   background-color: #8f61da;
   font-weight: bold;
@@ -96,6 +109,7 @@ h1 {
   border-radius: 5px;
 }
 
+/* Estilo del total de puntos */
 .total {
   font-weight: bold;
   font-size: 0.9em;
@@ -103,10 +117,11 @@ h1 {
   border-radius: 5px;
 }
 
+/* Estilo del botón de ganadores */
 .boton-ganadores {
   display: block;
-  width: 98%; /* El botón será un 20% más ancho que la tabla */
-  margin: 20px auto 0; /* Centra el botón horizontalmente */
+  width: 98%; /* Botón más ancho que la tabla */
+  margin: 20px auto 0;
   padding: 15px;
   margin-top: 20px;
   background-color: #6b41b6;
@@ -120,46 +135,51 @@ h1 {
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+/* Efecto hover en el botón */
 .boton-ganadores:hover {
   background-color: #8f61da;
-  transform: scale(1.02);
+  transform: scale(1.02); /* Escalado al pasar el cursor */
 }
 
+/* Estilo del modal */
 .modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.95); /* Fondo más oscuro */
+  background-color: rgba(0, 0, 0, 0.95); /* Fondo oscuro semitransparente */
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
+  z-index: 9999; /* Coloca el modal por encima de otros elementos */
 }
 
+/* Estilo del contenido del modal */
 .modal-content {
   text-align: center;
   background-color: #faf3ff;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  animation: fadeIn 1s ease;
+  animation: fadeIn 1s ease; /* Animación de aparición */
 }
 
+/* Estilo de la imagen del modal */
 .poker-img {
   width: 100px;
   height: 100px;
   animation: bounce 2s infinite; /* Animación de rebote */
 }
 
-/* Desenfoque y oscurecimiento del fondo cuando el modal está activo */
+/* Efectos al activar el modal */
 body.modal-active .container {
-  filter: blur(5px); /* Mayor desenfoque */
-  opacity: 0.3; /* Fondo aún más oscuro */
-  pointer-events: none; /* Desactiva interacciones mientras el modal está activo */
+  filter: blur(5px); /* Desenfoque del fondo */
+  opacity: 0.3; /* Baja la opacidad */
+  pointer-events: none; /* Desactiva interacciones */
 }
 
+/* Animación de aparición */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -171,13 +191,12 @@ body.modal-active .container {
   }
 }
 
+/* Animación de rebote */
 @keyframes bounce {
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-15px);
+    transform: translateY(-15px); /* Rebote hacia arriba */
   }
 }
-

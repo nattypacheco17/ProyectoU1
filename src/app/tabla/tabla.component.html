@@ -1,39 +1,54 @@
+<!-- Modal que contiene la imagen de Póker -->
 <div id="modalPoker" class="modal">
   <div class="modal-content">
     <img src="/../assets/LogoTelefunken.png" alt="Póker" class="poker-img" />
   </div>
 </div>
 
+<!-- Contenedor principal con el contenido de la página -->
 <div class="container">
+  <!-- Logo y título -->
   <div>
     <img src="../../assets/LogoTelefunken.png" alt="Logo" class="logo" />
     <h1>TELEFUNKEN</h1>
   </div>
+
+  <!-- Tabla que muestra las puntuaciones de los jugadores -->
   <table class="tabla">
     <thead>
       <tr>
-        <th></th>
+        <th></th> <!-- Columna vacía para la fila de nombres -->
         <th class="jugador-header">Jugador 1</th>
         <th class="jugador-header">Jugador 2</th>
         <th class="jugador-header">Jugador 3</th>
       </tr>
     </thead>
     <tbody>
+      <!-- Iteración sobre las filas de puntos con Angular -->
       <tr *ngFor="let fila of filas; let i = index">
+        <!-- Columna que muestra el nombre o categoría de la fila -->
         <td class="especial">{{ fila }}</td>
+
+        <!-- Entrada para los puntos del Jugador 1 -->
         <td class="input-container">
           <input type="number" class="input-puntos" [value]="puntos[0][i] === 0 ? '' : puntos[0][i]"
             (input)="actualizarPuntos(0, i, $event)" min="1" />
         </td>
+
+        <!-- Entrada para los puntos del Jugador 2 -->
         <td class="input-container">
           <input type="number" class="input-puntos" [value]="puntos[1][i] === 0 ? '' : puntos[1][i]"
             (input)="actualizarPuntos(1, i, $event)" min="1" />
         </td>
+
+        <!-- Entrada para los puntos del Jugador 3 -->
         <td class="input-container">
           <input type="number" class="input-puntos" [value]="puntos[2][i] === 0 ? '' : puntos[2][i]"
             (input)="actualizarPuntos(2, i, $event)" min="1" />
         </td>
       </tr>
+
+      <!-- Fila para mostrar los totales de cada jugador -->
       <tr class="total-row">
         <td class="especial">Total</td>
         <td class="input-container">
@@ -48,5 +63,7 @@
       </tr>
     </tbody>
   </table>
+
+  <!-- Botón que redirige a la página de los ganadores -->
   <button class="boton-ganadores" (click)="verGanadores()" routerLink="/componente5">Ver Ganadores</button>
 </div>

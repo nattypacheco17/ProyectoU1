@@ -194,15 +194,6 @@ header h1 {
   animation: fadeIn 1s ease-out;
 }
 
-/* Contenedor principal */
-.container {
-  width: 80%;
-  max-width: 1000px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
 /* Estilo de las tarjetas */
 .card {
@@ -210,13 +201,15 @@ header h1 {
   color: white; /* Texto blanco */
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+  margin-bottom: 30px; /* Espacio entre las tarjetas */
   padding: 20px;
   width: 100%;
   max-width: 900px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   animation: slideIn 0.6s ease-out;
   text-align: justify;
+  align-content: center;
+
 }
 
 /* Animación de deslizamiento al entrar */
@@ -238,7 +231,7 @@ header h1 {
 
 /* Estilos para los encabezados */
 .card h2 {
-  font-size: 1.8em;
+  font-size: 1.0em;
   margin-bottom: 15px;
   color: #fff;
   font-weight: bold;
@@ -262,3 +255,74 @@ header h1 {
 }
 
 
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.card ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  color: #e6e6e6;
+}
+
+/* Animación para que la imagen se deslice desde la izquierda */
+@keyframes slideFromLeft {
+    0% {
+        transform: translateX(-100%); /* Empieza fuera de la pantalla a la izquierda */
+    }
+    50% {
+        transform: translateX(100%); /* Desliza la imagen hacia la derecha */
+    }
+    100% {
+        transform: translateX(-100%); /* Vuelve fuera de la pantalla a la izquierda */
+    }
+}
+
+/* Animación para que la imagen se deslice desde la derecha */
+@keyframes slideFromRight {
+    0% {
+        transform: translateX(100%); /* Empieza fuera de la pantalla a la derecha */
+    }
+    50% {
+        transform: translateX(-100%); /* Desliza la imagen hacia la izquierda */
+    }
+    100% {
+        transform: translateX(100%); /* Vuelve fuera de la pantalla a la derecha */
+    }
+}
+
+/* Estilo para la imagen que se desliza desde la izquierda */
+.poker-img-left {
+    width: 200px; /* Ajusta el tamaño de la imagen */
+    position: absolute;
+    left: -100px; /* Coloca la imagen más a la izquierda */
+    animation: slideFromLeft 4s ease-in-out infinite; /* Animación de deslizamiento desde la izquierda */
+}
+
+/* Estilo para la imagen que se desliza desde la derecha */
+.poker-img-right {
+    width: 200px; /* Ajusta el tamaño de la imagen */
+    position: absolute;
+    right: -100px; /* Coloca la imagen más a la derecha */
+    animation: slideFromRight 4s ease-in-out infinite; /* Animación de deslizamiento desde la derecha */
+    height: auto;
+
+}
+
+
+/* Estilo para el contenedor row */
+.row {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las columnas se ajusten en pantallas más pequeñas */
+  gap: 20px; /* Espacio entre las columnas */
+  justify-content: center; /* Centra las columnas dentro del row */
+  margin-bottom: 50px; /* Espacio inferior para el row */
+}
