@@ -1,20 +1,12 @@
 <div id="modalPoker" class="modal">
   <div class="modal-content">
-    <img
-      src="https://pngimg.com/d/poker_PNG51.png"
-      alt="Póker"
-      class="poker-img"
-    />
+    <img src="/../assets/LogoTelefunken.png" alt="Póker" class="poker-img" />
   </div>
 </div>
 
 <div class="container">
   <div>
-    <img
-      src="../../assets/LogoTelefunken.png"
-      alt="Logo"
-      class="logo"
-    />
+    <img src="../../assets/LogoTelefunken.png" alt="Logo" class="logo" />
     <h1>TELEFUNKEN</h1>
   </div>
   <table class="tabla">
@@ -30,58 +22,28 @@
       <tr *ngFor="let fila of filas; let i = index">
         <td class="especial">{{ fila }}</td>
         <td class="input-container">
-          <input
-            type="number"
-            class="input-puntos"
-            [value]="puntos[0][i] === 0 ? '' : puntos[0][i]"
-            (input)="actualizarPuntos(0, i, $event)"
-            min="1"
-          />
+          <input type="number" class="input-puntos" [value]="puntos[0][i] === 0 ? '' : puntos[0][i]"
+            (input)="actualizarPuntos(0, i, $event)" min="1" />
         </td>
         <td class="input-container">
-          <input
-            type="number"
-            class="input-puntos"
-            [value]="puntos[1][i] === 0 ? '' : puntos[1][i]"
-            (input)="actualizarPuntos(1, i, $event)"
-            min="1"
-          />
+          <input type="number" class="input-puntos" [value]="puntos[1][i] === 0 ? '' : puntos[1][i]"
+            (input)="actualizarPuntos(1, i, $event)" min="1" />
         </td>
         <td class="input-container">
-          <input
-            type="number"
-            class="input-puntos"
-            [value]="puntos[2][i] === 0 ? '' : puntos[2][i]"
-            (input)="actualizarPuntos(2, i, $event)"
-            min="1"
-          />
+          <input type="number" class="input-puntos" [value]="puntos[2][i] === 0 ? '' : puntos[2][i]"
+            (input)="actualizarPuntos(2, i, $event)" min="1" />
         </td>
       </tr>
       <tr class="total-row">
         <td class="especial">Total</td>
         <td class="input-container">
-          <input
-            type="text"
-            [value]="totales[0] === 0 ? '-' : totales[0]"
-            class="input-puntos total"
-            readonly
-          />
+          <input type="text" [value]="totales[0] === 0 ? '-' : totales[0]" class="input-puntos total" readonly />
         </td>
         <td class="input-container">
-          <input
-            type="text"
-            [value]="totales[1] === 0 ? '-' : totales[1]"
-            class="input-puntos total"
-            readonly
-          />
+          <input type="text" [value]="totales[1] === 0 ? '-' : totales[1]" class="input-puntos total" readonly />
         </td>
         <td class="input-container">
-          <input
-            type="text"
-            [value]="totales[2] === 0 ? '-' : totales[2]"
-            class="input-puntos total"
-            readonly
-          />
+          <input type="text" [value]="totales[2] === 0 ? '-' : totales[2]" class="input-puntos total" readonly />
         </td>
       </tr>
     </tbody>
