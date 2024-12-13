@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-game-code',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './game-code.component.html',
   styleUrls: ['./game-code.component.scss'],
 })
@@ -20,9 +21,5 @@ export class GameCodeComponent {
     if (this.gameCode.length === 6) {
       console.log('Buscando juego con código:', this.gameCode);
     }
-  }
-
-  goBack(): void {
-    console.log('Regresando..');
   }
 }
