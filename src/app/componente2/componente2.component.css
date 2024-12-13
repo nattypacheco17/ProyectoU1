@@ -21,6 +21,7 @@ body {
   background-size: cover;
   background-position: center;
   animation: blink-background 1.5s ease-in-out; /* Animación combinada */
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -213,4 +214,23 @@ body {
     font-size: 0.8rem;
     padding: 7px 10px;
   }
+}
+
+@keyframes zoom-background {
+  0% {
+    background-size: 100%;
+  }
+  50% {
+    background-size: 110%;
+  }
+  100% {
+    background-size: 100%;
+  }
+}
+
+.background-container {
+  background-image: url('assets/24.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: zoom-background 8s ease-in-out infinite;
 }
