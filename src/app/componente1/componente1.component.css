@@ -34,6 +34,21 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.logo-container {
+  display: flex; /* Habilitar flexbox */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  width: 100%; /* Asegurarse de que ocupe todo el ancho */
+  margin-bottom: 20px; /* Separar del título o elementos adyacentes si es necesario */
+}
+
+.logo {
+  width: 100px; /* Tamaño del logo */
+  height: 100px; /* Tamaño del logo */
+  border-radius: 50%; /* Hacerlo circular */
+  object-fit: cover; /* Ajustar la imagen sin distorsión */
+}
+
 .title {
   font-size: 3rem;
   font-weight: bold;
