@@ -1,1 +1,25 @@
-<p>componente1 works!</p>
+<div class="container">
+  <p class="description">La forma más fácil de jugar Cuarenta. Con amigos y en línea.</p>
+
+  <div class="player-selection">
+    <label for="players">Número de jugadores</label>
+    <div>
+      <input type="radio" id="2jugadores" name="players" value="2" [(ngModel)]="numJugadores" />
+      <label for="2jugadores">2 jugadores</label>
+    </div>
+    <div>
+      <input type="radio" id="4jugadores" name="players" value="4" [(ngModel)]="numJugadores" />
+      <label for="4jugadores">4 jugadores</label>
+    </div>
+  </div>
+
+  <div class="name-input">
+    <label for="playerName">Tu nombre</label>
+    <input type="text" id="playerName" [(ngModel)]="nombre" maxlength="10" placeholder="Ingrese su nombre" />
+  </div>
+
+  <div class="buttons">
+    <button (click)="crearJuego()" [disabled]="!nombre || !numJugadores">Crear juego</button>
+    <button (click)="unirseJuego()">Unirse a un juego</button>
+  </div>
+</div>

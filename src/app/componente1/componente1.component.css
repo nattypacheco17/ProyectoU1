@@ -1,0 +1,54 @@
+.container {
+  background-color: #200171;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.title {
+  font-family: 'Arial', sans-serif;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.description {
+  margin-bottom: 20px;
+}
+
+.player-selection {
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #6b41b6;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+button:disabled {
+  background-color: #8f61da;
+}
+
+button:hover:not(:disabled) {
+  background-color: #472293;
+}
+
+.name-input input {
+  padding: 10px;
+  font-size: 16px;
+  width: 80%;
+  margin-top: 10px;
+  border: 2px solid #8f61da;
+  border-radius: 5px;
+}
+
+input[type="radio"] {
+  margin: 10px;
+}
