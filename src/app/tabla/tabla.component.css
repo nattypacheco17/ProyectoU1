@@ -18,17 +18,17 @@
 
 /* Estilo del encabezado h1 */
 h1 {
-  color: #2c2b2e; /* Color de texto oscuro */
-  font-size: 1.8em;
-  margin-bottom: 5px;
-  font-family: 'Georgia', serif; /* Fuente serif */
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #9859f7;
 }
 
 /* Estilo del logo */
 .logo {
   max-width: 100px;
   height: 100px;
-  margin-left: 45px; /* Desplazamiento izquierdo */
+  margin-left: 105px; /* Desplazamiento izquierdo */
 }
 
 /* Estilo de la tabla */

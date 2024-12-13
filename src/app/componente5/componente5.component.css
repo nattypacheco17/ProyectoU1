@@ -352,3 +352,10 @@ body {
   background-repeat: no-repeat;
   animation: wave-background 15s ease-in-out infinite;
 }
+
+
+.logo {
+  max-width: 100px;
+  height: 100px;
+  margin-left: 130px; /* Desplazamiento izquierdo */
+}
