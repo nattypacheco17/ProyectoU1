@@ -215,3 +215,22 @@ body {
     padding: 7px 10px;
   }
 }
+
+@keyframes zoom-background {
+  0% {
+    background-size: 100%;
+  }
+  50% {
+    background-size: 110%;
+  }
+  100% {
+    background-size: 100%;
+  }
+}
+
+.background-container {
+  background-image: url('assets/24.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: zoom-background 8s ease-in-out infinite;
+}

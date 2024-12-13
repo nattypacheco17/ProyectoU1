@@ -1,133 +1,108 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    background-color: #f9f9f9;
-    font-family: 'Arial', sans-serif;
-    color: #333;
+.background-container {
+  width: 100%;
+  height: 100vh;
+  background-image: url('assets/24.png'); /* Cambia esto por la ruta de tu imagen */
+  background-size: cover;
+  background-position: center;
+  animation: blink-background 2s infinite; /* Animación parpadeante */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.container {
+  color: #150020;
+  background-color: rgba(255, 255, 255, 0.822);
+  text-align: center;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: 0 auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; /* Asegura alineación vertical dentro del contenedor */
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex; /* Habilitar flexbox */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  width: 100%; /* Asegurarse de que ocupe todo el ancho */
+  margin: 20px 0; /* Separar del título */
+}
+
+.logo {
+  width: 120px; /* Ajustar el tamaño del logo */
+  height: auto; /* Mantener la proporción */
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #9859f7;
+  text-align: center; /* Centrar texto */
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #9859f7;
+}
+
+
+.description {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.player-selection,
+.name-input {
+  margin: 20px 0;
+}
+
+input,
+button {
+  display: block; /* Asegura que los elementos no estén en línea */
+  margin: 10px auto; /* Centra horizontalmente los elementos */
+}
+
+button {
+  background-color: #6b41b6;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover:not(:disabled) {
+  background-color: #200171;
+  transform: translateY(-3px);
+}
+
+@keyframes zoom-background {
+  0% {
+    background-size: 100%;
   }
-  .background-container {
-    width: 100%;
-    height: 100vh;
-    background-image: url('assets/24.png'); /* Cambia esto por la ruta de tu imagen */
-    background-size: cover;
-    background-position: center;
-    animation: blink-background 2s infinite; /* Animación parpadeante */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  50% {
+    background-size: 110%;
   }
-
-  /* Contenedor principal */
-  .text-center {
-    text-align: center;
-    padding: 40px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    width: 100%;
+  100% {
+    background-size: 100%;
   }
+}
 
-  /* Logo */
-  .text-center img {
-    border-radius: 50%;
-  }
-
-  /* Título */
-  .text-center h1 {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #4a4a4a;
-  }
-
-  /* Texto de instrucción */
-  .text-center p {
-    font-size: 1rem;
-    color: #666666;
-    margin-bottom: 10px;
-  }
-
-  /* Estilo del input */
-  .text-center input {
-    width: 100%;
-    max-width: 300px;
-    font-size: 1rem;
-    padding: 5px;
-    text-align: center;
-    border: none;
-    border-bottom: 2px solid #ccc;
-    outline: none;
-    transition: border-color 0.3s ease-in-out;
-  }
-
-  .text-center input:focus {
-    border-color: #6b41b6;
-  }
-
-  /* Indicador de caracteres */
-  .text-center .text-gray-500 {
-    font-size: 0.9rem;
-    color: #999999;
-    margin-top: 5px;
-  }
-
-  /* Botón de acción principal */
-  .text-center button {
-    font-size: 1rem;
-    font-weight: bold;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-  }
-
-
-
-  .text-center button[disabled] {
-    background-color: #e0e0e0;
-    color: #b3b3b3;
-    cursor: not-allowed;
-  }
-
-  .text-center button:not([disabled]) {
-    background-color: #6b41b6;
-    color: white;
-  }
-
-  .text-center button:not([disabled]):hover {
-    background-color: #6b41b6;
-  }
-
-  /* Botón de retroceso */
-  .text-center .text-2xl {
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    color: #333333;
-    cursor: pointer;
-    transition: color 0.3s ease-in-out;
-  }
-
-  .text-center .text-2xl:hover {
-    color: #5e09a4;
-  }
-
-
-  @keyframes wave-background {
-    0%, 100% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-  }
-
-  .background-container {
-    background-image: url('assets/24.png');
-    background-size: 200%;
-    background-repeat: no-repeat;
-    animation: wave-background 15s ease-in-out infinite;
-  }
+.background-container {
+  background-image: url('assets/24.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: zoom-background 8s ease-in-out infinite;
+}
