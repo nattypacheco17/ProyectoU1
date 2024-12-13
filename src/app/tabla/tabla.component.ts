@@ -59,6 +59,6 @@ export class TablaComponent implements OnInit {
   }
 
   verGanadores(): void {
-    this.router.navigate(['/ganadores'], { state: { totales: this.totales, jugadores: this.jugadores } });
+    this.router.navigate(['/componente5'], { state: { totales: this.totales, jugadores: this.jugadores } });
   }
 }
