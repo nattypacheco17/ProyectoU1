@@ -102,3 +102,237 @@ body {
 .exit-button:hover {
   background-color: #5e09a4; /* Cambiado */
 }
+
+
+
+
+
+
+/* Contenedor principal que envuelve ambos elementos */
+.main-container {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 100vh; /* Altura completa de la ventana */
+  width: 100vw; /* Ancho completo de la ventana */
+  background-image: url('https://img.freepik.com/vector-gratis/fondo-mesa-poquer-diseno-plano_23-2151047005.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Contenedor ganador */
+.winner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  margin-right: 20px; /* Espacio entre el meme y el contenedor */
+}
+
+/* Contenedor de la imagen del meme */
+.meme-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 300px;
+}
+
+.meme-img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Estilo general */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('https://img.freepik.com/vector-gratis/fondo-mesa-poquer-diseno-plano_23-2151047005.jpg');
+  background-size: cover;
+  background-position: center;
+  font-family: 'Arial', sans-serif;
+  color: #4a4a4a;
+  opacity: 0; /* Para ocultar el contenido inicialmente */
+  animation: fadeIn 1s forwards; /* Animación de desvanecimiento */
+}
+
+/* Animación de desvanecimiento */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Contenedor principal */
+.winner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  margin-right: 20px;
+  transform: translateY(-50px); /* Empezar fuera del campo de vista */
+  opacity: 0;
+  animation: slideIn 0.8s ease-out forwards 0.5s; /* Animación para deslizar hacia abajo */
+}
+
+/* Animación de deslizamiento */
+@keyframes slideIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Logo */
+.winner-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  opacity: 0;
+  animation: fadeInLogo 0.8s ease forwards 0.7s;
+}
+
+@keyframes fadeInLogo {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Título */
+.title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #4a4a4a;
+  margin-bottom: 15px;
+}
+
+/* Lista de ganadores */
+.winner-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  width: 100%;
+}
+
+.winner {
+  font-size: 1.2rem;
+  margin: 5px 0;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(244, 244, 244, 1);
+  border-radius: 5px;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInWinner 0.5s ease forwards;
+}
+
+.winner:nth-child(1) {
+  animation-delay: 0.8s;
+}
+
+.winner:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.winner:nth-child(3) {
+  animation-delay: 1.2s;
+}
+
+@keyframes fadeInWinner {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Botones */
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.restart-button, .exit-button {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: popInButtons 0.4s ease forwards;
+}
+
+.restart-button {
+  background-color: #6b41b6;
+  color: white;
+}
+
+.exit-button {
+  background-color: #6b41b6;
+  color: white;
+}
+
+@keyframes popInButtons {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.restart-button {
+  animation-delay: 1.4s;
+}
+
+.exit-button {
+  animation-delay: 1.6s;
+}
+
+/* Contenedor del meme */
+.meme-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 300px;
+  opacity: 0;
+  transform: translateX(50px); /* Inicia desde fuera del campo de vista */
+  animation: slideInMeme 1s ease forwards 0.5s;
+}
+
+@keyframes slideInMeme {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.meme-img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}

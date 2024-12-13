@@ -1,29 +1,36 @@
 <body>
-  <div class="winner-container text-center">
-    <div class="mb-6">
-      <img src="https://storage.googleapis.com/a1aa/image/qUu5KfWXO9WkaKgebK0DJ0ceG6adkezwGJlHpDFUqGSSTGmPB.jpg"
-        alt="Logo de ganadores" class="mx-auto mb-4 winner-logo" />
-      <h1 class="title">¡FELICITACIONES A LOS GANADORES!</h1>
+  <div class="main-container">
+    <div class="winner-container text-center">
+      <div class="mb-6">
+        <img src="https://storage.googleapis.com/a1aa/image/qUu5KfWXO9WkaKgebK0DJ0ceG6adkezwGJlHpDFUqGSSTGmPB.jpg"
+          alt="Logo de ganadores" class="mx-auto mb-4 winner-logo" />
+        <h1 class="title">¡FELICITACIONES A LOS GANADORES!</h1>
+      </div>
+
+      <div class="winner-list">
+        <div class="winner">
+          <span class="winner-rank">🥇</span>
+          <span class="winner-name">Juan Pérez</span>
+        </div>
+        <div class="winner">
+          <span class="winner-rank">🥈</span>
+          <span class="winner-name">Ana Gómez</span>
+        </div>
+        <div class="winner">
+          <span class="winner-rank">🥉</span>
+          <span class="winner-name">Carlos López</span>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button class="restart-button" routerLink="/componente1">JUGAR DE NUEVO</button>
+        <button class="exit-button" routerLink="">SALIR</button>
+      </div>
     </div>
 
-    <div class="winner-list">
-      <div class="winner">
-        <span class="winner-rank">🥇</span>
-        <span class="winner-name">Juan Pérez</span>
-      </div>
-      <div class="winner">
-        <span class="winner-rank">🥈</span>
-        <span class="winner-name">Ana Gómez</span>
-      </div>
-      <div class="winner">
-        <span class="winner-rank">🥉</span>
-        <span class="winner-name">Carlos López</span>
-      </div>
-    </div>
-
-    <div class="buttons">
-      <button class="restart-button" routerLink="/componente1">JUGAR DE NUEVO</button>
-      <button class="exit-button" routerLink="">SALIR</button>
+    <!-- Imagen del meme -->
+    <div class="meme-container">
+      <img src="../../meme.jpg" alt="Meme gracioso" class="meme-img" />
     </div>
   </div>
 </body>
