@@ -157,7 +157,7 @@ body {
 }
 
 .background-container {
-  background-image: url('../../assets/24.png');
+  background-image: url('assets/24.png');
   background-size: cover;
   background-repeat: no-repeat;
   animation: zoom-background 8s ease-in-out infinite;
