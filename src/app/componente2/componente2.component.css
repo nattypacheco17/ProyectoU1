@@ -1,54 +1,68 @@
+/* Estilo general */
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   margin: 0;
-  background-size: cover; /* Asegura que la imagen cubra todo el fondo */
-  background-position: center; /* Centra la imagen */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   font-family: 'Arial', sans-serif;
   color: #333;
+  animation: fadeInBody 1s ease-in-out; /* Animación para el cuerpo */
 }
+
+/* Animación del fondo parpadeante */
 .background-container {
   width: 100%;
   height: 100vh;
-  background-image: url('assets/24.png'); /* Cambia esto por la ruta de tu imagen */
+  background-image: url('assets/24.png');
   background-size: cover;
   background-position: center;
-  animation: blink-background 2s infinite; /* Animación parpadeante */
+  animation: blink-background 1.5s ease-in-out; /* Animación combinada */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* Animación al cargar el contenedor de texto */
 .text-center {
   text-align: center;
-  padding: 20px 75px; /* Reducir padding en los lados para que el fondo sea más visible */
-  background-color: rgba(255, 255, 255, 0.788); /* Fondo blanco con algo de transparencia */
+  padding: 20px 40px; /* Ajuste en padding */
+  background-color: rgba(255, 255, 255, 0.788);
   border-radius: 20px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  width: 35%; /* Reducir el ancho al 80% para que haya más espacio para el fondo alrededor */
-  height: 96%;
-  max-width: 600px; /* Establecer un ancho máximo para que no se expanda demasiado */
+  width: 80%;
+  max-width: 600px;
+  height: auto;
+  opacity: 0; /* Comienza invisible */
+  animation: fadeIn 2s ease-in-out 0.5s forwards; /* Animación de aparición */
 }
 
 .text-center img {
   border-radius: 50%;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out 1s forwards; /* Aparición retrasada */
 }
 
 .text-center h1 {
   font-size: 2rem;
   font-weight: bold;
   color: #4a4a4a;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out 1.5s forwards; /* Aparición retrasada */
 }
 
 .text-center p {
   font-size: 1rem;
   color: #666666;
   margin-bottom: 10px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out 2s forwards; /* Aparición retrasada */
 }
 
+/* Botones */
 .text-center button {
   font-size: 1rem;
   font-weight: bold;
@@ -57,6 +71,8 @@ body {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
+  opacity: 0;
+  animation: fadeInUp 1.2s ease-in-out 2.5s forwards; /* Aparición con desplazamiento */
 }
 
 .text-center button:not([disabled]) {
@@ -76,62 +92,28 @@ body {
   padding: 10px 15px;
   border-radius: 30px;
   font-size: 1.2em;
-}
-
-.player-icon {
-  margin-right: 10px;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in-out 2s forwards; /* Aparición retrasada */
 }
 
 .invite-code {
-  font-size: 1.8em;
+  font-size: 1.5em; /* Ajuste para pantallas pequeñas */
   font-weight: bold;
   margin: 20px 0;
 }
 
-.copy-button {
-  background-color: #333;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.copy-button, .cancel-button {
+  margin: 5px 10px; /* Ajustar los márgenes para que no queden muy juntos */
+  opacity: 0;
+  animation: fadeInUp 1.5s ease-in-out 2.8s forwards; /* Aparición retrasada con desplazamiento */
 }
 
-.copy-button:hover {
-  background-color: #555;
-}
-
-.cancel-button {
-  background-color: #ff4c4c;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-top: 15px;
-}
-
-.cancel-button:hover {
-  background-color: #ff1f1f;
-}
-
+/* Animación de puntos de carga */
 .loading-dots {
   display: inline-block;
   animation: wave 1.5s infinite ease-in-out;
   font-size: 24px;
   margin-left: 2px;
-}
-
-.loading-dots:nth-child(1) {
-  animation-delay: 0s;
-}
-
-.loading-dots:nth-child(2) {
-  animation-delay: 0.2s;
-}
-
-.loading-dots:nth-child(3) {
-  animation-delay: 0.4s;
 }
 
 @keyframes wave {
@@ -143,22 +125,90 @@ body {
   }
 }
 
-@keyframes zoom-background {
-  0% {
-    background-size: 100%;
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blink-background {
+  0%, 100% {
+    filter: brightness(1);
   }
   50% {
-    background-size: 110%;
-  }
-  100% {
-    background-size: 100%;
+    filter: brightness(1.2);
   }
 }
 
-.background-container {
-  background-image: url('assets/24.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  animation: zoom-background 8s ease-in-out infinite;
+@keyframes fadeInBody {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
+/* Media queries para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .text-center {
+    width: 90%; /* Ajustar el ancho para pantallas pequeñas */
+    padding: 15px 30px;
+  }
+
+  .text-center h1 {
+    font-size: 1.5rem;
+  }
+
+  .invite-code {
+    font-size: 1.3em;
+  }
+
+  .player-info {
+    font-size: 1em;
+  }
+
+  .copy-button, .cancel-button {
+    font-size: 0.9rem; /* Reducir el tamaño de los botones */
+    padding: 8px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-center {
+    width: 100%;
+    padding: 10px 20px;
+  }
+
+  .text-center h1 {
+    font-size: 1.2rem;
+  }
+
+  .invite-code {
+    font-size: 1.2em;
+  }
+
+  .player-info {
+    font-size: 0.9em;
+  }
+
+  .copy-button, .cancel-button {
+    font-size: 0.8rem;
+    padding: 7px 10px;
+  }
+}
