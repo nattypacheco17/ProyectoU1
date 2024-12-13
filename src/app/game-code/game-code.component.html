@@ -1,29 +1,35 @@
-
 <div class="background-container">
- <div class="text-center background-container">
+  <div class="container">
+    <!-- Título -->
+    <h1 class="title">TELEFUNKEN</h1>
+
     <!-- Logo -->
-    <div class="mb-6" style="margin-top: 4%;">
-      <img src="../../assets/LogoTelefunken.png"
-        alt="Logo with playing cards" class="mx-auto mb-4" width="100" height="100" />
-      <h1 class="text-4xl font-bold">TELEFUNKEN</h1>
+    <div class="logo-container">
+      <img src="../../assets/LogoTelefunken.png" alt="Logo with playing cards" class="logo" />
     </div>
 
     <!-- Instrucción e input -->
-    <p class="mb-4">Introduce el código del juego</p>
-    <div class="mb-4">
-      <input class="border-b-2 border-gray-300 focus:outline-none focus:border-gray-500 text-center w-64"
-        placeholder="Código" type="text" [(ngModel)]="gameCode" (input)="updateCharacterCount()" />
+    <p class="description">Introduce el código del juego</p>
+    <div class="name-input">
+      <input
+        class="border-b-2 border-gray-300 focus:outline-none focus:border-gray-500 text-center w-64"
+        placeholder="Código"
+        type="text"
+        [(ngModel)]="gameCode"
+        (input)="updateCharacterCount()"
+      />
       <div class="text-gray-500 mt-1">{{ characterCount }} / 6</div>
     </div>
 
     <!-- Botón principal -->
-    <button class="bg-gray-300 text-gray-700 py-2 px-4 rounded" routerLink="/tabla" [disabled]="gameCode.length !== 6"
+    <button
+      [disabled]="gameCode.length !== 6"
       (click)="searchGame()">
       UNIRSE AL JUEGO
     </button>
 
     <!-- Botón de retroceso -->
-    <div class="mt-6">
+    <div>
       <button class="text-black text-2xl" routerLink="/componente1">
         <i class="fas fa-arrow-left"></i>
       </button>
