@@ -1,9 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-componente2',
   standalone: true,
-  imports: [],
+  imports: [RouterLink,CommonModule,FormsModule],
   templateUrl: './componente2.component.html',
   styleUrl: './componente2.component.css'
 })

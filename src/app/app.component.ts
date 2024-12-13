@@ -4,11 +4,12 @@ import { Componente2Component } from './componente2/componente2.component';
 import { GameCodeComponent } from './game-code/game-code.component';
 import { TablaComponent } from './tabla/tabla.component';
 import { Componente5Component } from './componente5/componente5.component';
+import { Componente1Component } from './componente1/componente1.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, Componente2Component, GameCodeComponent, Componente5Component, TablaComponent],
+  imports: [RouterOutlet, Componente2Component, GameCodeComponent, Componente5Component, TablaComponent,Componente1Component],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
