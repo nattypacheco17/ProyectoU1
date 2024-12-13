@@ -1,89 +1,104 @@
+/* Estilo general */
 body {
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  margin: 0;
-  background-image: url('https://img.freepik.com/vector-gratis/fondo-mesa-poquer-diseno-plano_23-2151047005.jpg?t=st=1734024517~exp=1734028117~hmac=3f4fd00642959f93060b9e13abf84a07770d21c5cd7c2cb90d532ec6f1a44bae&w=996');
+  height: 100vh;
+  background-image: url('https://img.freepik.com/vector-gratis/fondo-mesa-poquer-diseno-plano_23-2151047005.jpg');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
   font-family: 'Arial', sans-serif;
-  color: #fff;
+  color: #4a4a4a; /* Cambiado */
 }
 
+/* Contenedor principal */
 .winner-container {
-  text-align: center;
-  padding: 20px 40px;
-  background-color: rgba(0, 0, 0, 0.7);
-  border-radius: 10px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-  width: 80%;
-  max-width: 600px;
-}
-
-.winner-logo {
-  border-radius: 50%;
-}
-
-.title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #ffcd38;
-  margin-top: 20px;
-}
-
-.winner-list {
-  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.8); /* Cambiado */
+  border-radius: 12px;
   padding: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Cambiado */
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Logo */
+.winner-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+/* Título */
+.title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #4a4a4a; /* Cambiado */
+  margin-bottom: 15px;
+}
+
+/* Lista de ganadores */
+.winner-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  width: 100%;
 }
 
 .winner {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin: 10px 0;
-  color: #fff;
+  font-size: 1.2rem;
+  margin: 5px 0;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(244, 244, 244, 1); /* Cambiado */
+  border-radius: 5px;
 }
 
 .winner-rank {
-  font-size: 2.5rem;
   margin-right: 10px;
-}
-
-.winner-name {
   font-size: 1.5rem;
-  color: #ffcd38;
 }
 
+/* Botones */
 .buttons {
-  margin-top: 30px;
+  display: flex;
+  gap: 10px;
 }
 
 .restart-button, .exit-button {
+  flex: 1;
   font-size: 1rem;
   font-weight: bold;
-  padding: 12px 30px;
+  padding: 10px;
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-  margin: 10px;
+  transition: all 0.3s ease;
 }
 
 .restart-button {
-  background-color: #4CAF50;
+  background-color: #6b41b6; /* Cambiado */
   color: white;
 }
 
 .restart-button:hover {
-  background-color: #45a049;
+  background-color: #5e09a4; /* Cambiado */
 }
 
 .exit-button {
-  background-color: #f44336;
+  background-color: #6b41b6; /* Cambiado */
   color: white;
 }
 
 .exit-button:hover {
-  background-color: #d32f2f;
+  background-color: #5e09a4; /* Cambiado */
 }
