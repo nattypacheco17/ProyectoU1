@@ -1,34 +1,34 @@
 <body>
-  <div class="game-waiting-container text-center">
+  <div class="background-container">
+    <div class="game-waiting-container text-center">
 
-    <div class="mb-6" style="margin-top: 4%;">
-      <img src="https://storage.googleapis.com/a1aa/image/qUu5KfWXO9WkaKgebK0DJ0ceG6adkezwGJlHpDFUqGSSTGmPB.jpg"
-        alt="Logo with playing cards" class="mx-auto mb-4" width="100" height="100" />
-      <h1 class="text-4xl font-bold">TELEFUNKEN</h1>
+      <div class="mb-6" style="margin-top: 4%;">
+        <img src="https://storage.googleapis.com/a1aa/image/qUu5KfWXO9WkaKgebK0DJ0ceG6adkezwGJlHpDFUqGSSTGmPB.jpg"
+          alt="Logo with playing cards" class="mx-auto mb-4" width="100" height="100" />
+        <h1 class="text-4xl font-bold">TELEFUNKEN</h1>
+      </div>
+
+      <p>Esperando a otros jugadores</p>
+      <p><span class="loading-dots">.</span><span class="loading-dots">.</span><span class="loading-dots">.</span></p>
+
+      <!-- Mostrar nombre del jugador -->
+      <div class="player-info">
+        <span class="player-icon">👤</span>
+        <span class="player-name">{{ playerName }}</span>
+      </div>
+
+      <!-- Mostrar código de invitación -->
+      <p>Comparte el código con un amigo para que se una a la partida</p>
+      <div class="invite-code">{{ gameCode }}</div>
+
+      <!-- Botón para copiar el código -->
+      <button (click)="copyCode()" class="copy-button">COPIAR</button>
+      <button class="cancel-button" routerLink="/tabla">JUGAR</button>
+      <button class="cancel-button" routerLink="/componente1">CANCELAR</button>
+
+
+
+
     </div>
-
-    <p>Esperando a otros jugadores</p>
-    <p><span class="loading-dots">.</span><span class="loading-dots">.</span><span class="loading-dots">.</span></p>
-
-    <!-- Mostrar nombre del jugador -->
-    <div class="player-info">
-      <span class="player-icon">👤</span>
-      <span class="player-name">{{ playerName }}</span>
-    </div>
-
-    <!-- Mostrar código de invitación -->
-    <p>Comparte el código con un amigo para que se una a la partida</p>
-    <div class="invite-code">{{ gameCode }}</div>
-
-    <!-- Botón para copiar el código -->
-    <button (click)="copyCode()" class="copy-button">COPIAR</button>
-
-    <br>
-
-    <!-- Botón de cancelar -->
-    <button class="cancel-button" routerLink="/tabla">JUGAR</button>
-    <button class="cancel-button" routerLink="/componente1">CANCELAR</button>
-
-
   </div>
 </body>

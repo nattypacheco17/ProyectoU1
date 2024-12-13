@@ -1,25 +1,28 @@
-<div class="container">
-  <p class="description">La forma más fácil de jugar Cuarenta. Con amigos y en línea.</p>
+<div class="background-container">
 
-  <div class="player-selection">
-    <label for="players">Número de jugadores</label>
-    <div>
-      <input type="radio" id="2jugadores" name="players" value="2" [(ngModel)]="numJugadores" />
-      <label for="2jugadores">2 jugadores</label>
+  <div class="container">
+    <h1 class="title">TELEFUNKEN</h1>
+    <p class="description">¡La forma más fácil de jugar Telefunken! Con amigos y en línea.</p>
+
+  
+
+    <div class="player-selection">
+      <label for="playerSelect">Número de jugadores:</label>
+      <select id="playerSelect" [(ngModel)]="numJugadores">
+        <option *ngFor="let jugador of jugadores" [value]="jugador.value">
+          {{ jugador.label }}
+        </option>
+      </select>
     </div>
-    <div>
-      <input type="radio" id="4jugadores" name="players" value="4" [(ngModel)]="numJugadores" />
-      <label for="4jugadores">4 jugadores</label>
+
+    <div class="name-input">
+      <label for="playerName">Ingresa tu nombre:</label>
+      <input type="text" id="playerName" [(ngModel)]="nombre" maxlength="10" placeholder="Escribe tu nombre" />
     </div>
-  </div>
 
-  <div class="name-input">
-    <label for="playerName">Tu nombre</label>
-    <input type="text" id="playerName" [(ngModel)]="nombre" maxlength="10" placeholder="Ingrese su nombre" />
-  </div>
-
-  <div class="buttons">
-    <button class="pulse" routerLink="/componente2">Crear juego</button>
-    <button class="pulse" routerLink="/game-code">Unirse a un juego</button>
+    <div class="buttons">
+      <button class="pulse" routerLink="/componente2" (click)="crearJuego()">Crear juego</button>
+      <button class="pulse" routerLink="/game-code" (click)="unirseJuego()">Unirse a un juego</button>
+    </div>
   </div>
 </div>

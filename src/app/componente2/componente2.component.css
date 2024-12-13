@@ -4,21 +4,32 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
-  background-image: url('https://img.freepik.com/vector-gratis/fondo-mesa-poquer-diseno-plano_23-2151047005.jpg?t=st=1734024517~exp=1734028117~hmac=3f4fd00642959f93060b9e13abf84a07770d21c5cd7c2cb90d532ec6f1a44bae&w=996'); /* Añadir la imagen de fondo */
   background-size: cover; /* Asegura que la imagen cubra todo el fondo */
   background-position: center; /* Centra la imagen */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
   font-family: 'Arial', sans-serif;
   color: #333;
 }
+.background-container {
+  width: 100%;
+  height: 100vh;
+  background-image: url('assets/24.png'); /* Cambia esto por la ruta de tu imagen */
+  background-size: cover;
+  background-position: center;
+  animation: blink-background 2s infinite; /* Animación parpadeante */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .text-center {
   text-align: center;
-  padding: 20px 40px; /* Reducir padding en los lados para que el fondo sea más visible */
-  background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con algo de transparencia */
-  border-radius: 10px;
+  padding: 20px 75px; /* Reducir padding en los lados para que el fondo sea más visible */
+  background-color: rgba(255, 255, 255, 0.788); /* Fondo blanco con algo de transparencia */
+  border-radius: 20px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  width: 80%; /* Reducir el ancho al 80% para que haya más espacio para el fondo alrededor */
+  width: 35%; /* Reducir el ancho al 80% para que haya más espacio para el fondo alrededor */
+  height: 96%;
   max-width: 600px; /* Establecer un ancho máximo para que no se expanda demasiado */
 }
 
@@ -95,7 +106,7 @@ body {
   color: white;
   padding: 10px 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   margin-top: 15px;
 }
@@ -131,3 +142,23 @@ body {
     transform: translateY(-10px);
   }
 }
+
+@keyframes zoom-background {
+  0% {
+    background-size: 100%;
+  }
+  50% {
+    background-size: 110%;
+  }
+  100% {
+    background-size: 100%;
+  }
+}
+
+.background-container {
+  background-image: url('assets/24.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: zoom-background 8s ease-in-out infinite;
+}
+
