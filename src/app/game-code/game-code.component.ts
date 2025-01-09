@@ -11,7 +11,7 @@ import { RouterLink } from '@angular/router';
 })
 export class GameCodeComponent {
 showInstructions() {
-throw new Error('Method not implemented.');
+throw new Error('Metodo no impelmentado.');
 }
   gameCode: string = '';
   characterCount: number = 0;
