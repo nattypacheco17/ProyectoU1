@@ -10,6 +10,9 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./game-code.component.scss'],
 })
 export class GameCodeComponent {
+showInstructions() {
+throw new Error('Method not implemented.');
+}
   gameCode: string = '';
   characterCount: number = 0;
 

@@ -1,6 +1,15 @@
 <body>
   <div class="background-container">
+
     <div class="game-waiting-container text-center">
+
+      <!-- Nueva sección con avatar y botón -->
+      <div class="player-avatar-container">
+        <div class="avatar-frame">
+          <img src="assets/avatar.jpg" alt="Avatar" class="avatar-img" />
+        </div>
+        <button class="instructions-button" (click)="showInstructions()">INSTRUCCIONES</button>
+      </div>
 
       <div class="mb-6" style="margin-top: 4%;">
         <img src="../../assets/LogoTelefunken.png"
@@ -21,13 +30,11 @@
       <p>Comparte el código con un amigo para que se una a la partida</p>
       <div class="invite-code">{{ gameCode }}</div>
 
+
       <!-- Botón para copiar el código -->
       <button (click)="copyCode()" class="copy-button">COPIAR</button>
       <button class="cancel-button" routerLink="/tabla" style="margin-left: 10px;">JUGAR</button>
       <button class="cancel-button" routerLink="/componente1" style="margin-left: 10px;">CANCELAR</button>
-
-
-
 
     </div>
   </div>

@@ -11,6 +11,9 @@ import { Router, RouterLink } from '@angular/router';
   imports: [CommonModule, FormsModule, RouterLink]
 })
 export class TablaComponent implements OnInit {
+showInstructions() {
+throw new Error('Method not implemented.');
+}
   constructor(private router: Router) {}
 
   @Input() jugadores: string[] = [];

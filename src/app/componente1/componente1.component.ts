@@ -11,6 +11,9 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./componente1.component.css'],
 })
 export class Componente1Component {
+showInstructions() {
+throw new Error('Method not implemented.');
+}
   nombre: string = '';
   numJugadores: number = 2;
   jugadores = [
