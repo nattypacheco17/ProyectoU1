@@ -1,153 +1,126 @@
 .background-container {
   width: 100%;
-  height: 100vh;
-  background-image: url('assets/24.png'); /* Cambia esto por la ruta de tu imagen */
+  min-height: 100vh; /* cambiado de height a min-height para mejor responsividad */
+  background-image: url('assets/24.png');
   background-size: cover;
   background-position: center;
-  animation: blink-background 2s infinite; /* Animación parpadeante */
+  animation: blink-background 2s infinite;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1rem; /* añadido padding para evitar que el contenido toque los bordes */
 }
-
-
 
 .container {
   color: #150020;
   background-color: rgba(255, 255, 255, 0.822);
   text-align: center;
-  padding: 30px;
+  padding: clamp(15px, 5vw, 30px); /* padding responsivo */
   border-radius: 10px;
+  width: 90%; /* cambiado de max-width a width */
   max-width: 400px;
   margin: 0 auto;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
-  flex-direction: column; /* Asegura alineación vertical dentro del contenedor */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .logo-container {
-  display: flex; /* Habilitar flexbox */
-  justify-content: center; /* Centrar horizontalmente */
-  align-items: center; /* Centrar verticalmente */
-  width: 100%; /* Asegurarse de que ocupe todo el ancho */
-  margin: 20px 0; /* Separar del título */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: clamp(10px, 3vw, 20px) 0; /* margin responsivo */
 }
 
 .logo {
-  width: 120px; /* Ajustar el tamaño del logo */
-  height: auto; /* Mantener la proporción */
+  width: clamp(80px, 30vw, 120px); /* logo responsivo */
+  height: auto;
 }
 
 .title {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 5vw, 3rem); /* título responsivo */
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: clamp(10px, 3vw, 15px);
   color: #9859f7;
-  text-align: center; /* Centrar texto */
+  text-align: center;
 }
-
-.title {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 15px;
-  color: #9859f7;
-}
-
 
 .description {
-  margin-bottom: 20px;
-  font-size: 16px;
+  margin-bottom: clamp(10px, 3vw, 20px);
+  font-size: clamp(14px, 4vw, 16px); /* texto responsivo */
 }
 
 .player-selection,
 .name-input {
-  margin: 20px 0;
+  margin: clamp(10px, 3vw, 20px) 0;
+  width: 100%; /* asegura que ocupe todo el ancho disponible */
 }
 
-input,
-button {
-  display: block; /* Asegura que los elementos no estén en línea */
-  margin: 10px auto; /* Centra horizontalmente los elementos */
+input {
+  width: 100%;
+  max-width: 300px;
+  font-size: clamp(14px, 4vw, 16px);
+  padding: clamp(8px, 2vw, 12px);
+  margin: 10px auto;
 }
 
 button {
   background-color: #6b41b6;
   color: white;
-  padding: 12px 25px;
+  padding: clamp(8px, 2vw, 12px) clamp(15px, 4vw, 25px);
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: clamp(14px, 4vw, 16px);
   transition: background-color 0.3s, transform 0.2s;
+  width: auto; /* permite que el botón se ajuste al contenido */
+  min-width: 150px; /* asegura un ancho mínimo */
 }
 
-button:hover:not(:disabled) {
-  background-color: #200171;
-  transform: translateY(-3px);
+.button-disabled {
+  background-color: #cccccc !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+  opacity: 0.6; /* Agrega un poco de transparencia para indicar desactivado */
 }
 
-@keyframes zoom-background {
-  0% {
-    background-size: 100%;
-  }
-  50% {
-    background-size: 110%;
-  }
-  100% {
-    background-size: 100%;
-  }
-}
-
-.background-container {
-  background-image: url('assets/24.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  animation: zoom-background 8s ease-in-out infinite;
-}
-
-
-
-
-
-
-/* Contenedor del avatar y el botón */
 .player-avatar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 20px 0;
+  margin: clamp(10px, 3vw, 20px) 0;
+  width: 100%; /* asegura que ocupe todo el ancho */
+  gap: 1rem; /* espacio entre elementos */
 }
 
-/* Estilo del marco redondo para el avatar */
 .avatar-frame {
-  width: 70px;
-  height: 70px;
-  background-color: #9859f7; /* Morado */
+  width: clamp(50px, 15vw, 70px); /* avatar responsivo */
+  height: clamp(50px, 15vw, 70px);
+  background-color: #9859f7;
   border-radius: 50%;
-  overflow: hidden; /* Esconde cualquier parte de la imagen fuera del círculo */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  overflow: hidden;
+  flex-shrink: 0; /* evita que el avatar se encoja */
 }
 
 .avatar-img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Asegura que la imagen se ajuste correctamente dentro del círculo */
+  object-fit: cover;
 }
 
-/* Estilo del botón de instrucciones */
 .instructions-button {
   background-color: #6b41b6;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: clamp(8px, 2vw, 10px) clamp(15px, 4vw, 20px);
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
   border-radius: 5px;
+  font-size: clamp(12px, 3vw, 14px);
 }
 
 .instructions-button:hover {
@@ -156,4 +129,50 @@ button:hover:not(:disabled) {
 
 .instructions-button:focus {
   outline: none;
+}
+
+/* Media Queries para ajustes específicos */
+@media (max-width: 360px) {
+  .container {
+    padding: 10px;
+  }
+  
+  .player-avatar-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  button {
+    min-width: 120px;
+    font-size: 14px;
+  }
+}
+
+@media (max-height: 600px) {
+  .container {
+    padding: 15px;
+    margin: 10px 0;
+  }
+
+  .logo {
+    width: 60px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+}
+
+/* Asegura que la animación del fondo funcione en todos los dispositivos */
+@keyframes zoom-background {
+  0% {
+    background-size: cover;
+  }
+  50% {
+    background-size: 110% 110%;
+  }
+  100% {
+    background-size: cover;
+  }
 }

@@ -17,24 +17,24 @@
     </div>
 
     <!-- Instrucción e input -->
-    <p class="description">Introduce el código del juego</p>
+    <p class="description"> Introduce el código del juego </p>
     <div class="name-input">
-      <input
-        class="border-b-2 border-gray-300 focus:outline-none focus:border-gray-500 text-center w-64"
-        placeholder="Código"
-        type="text"
-        [(ngModel)]="gameCode"
-        (input)="updateCharacterCount()"
-      />
+      <input class="border-b-2 border-gray-300 focus:outline-none focus:border-gray-500 text-center w-64"
+        placeholder="Código" type="text" [(ngModel)]="gameCode" (input)="updateCharacterCount()" maxlength="6" />
+
+
       <div class="text-gray-500 mt-1">{{ characterCount }} / 6</div>
     </div>
 
     <!-- Botón principal -->
-    <button routerLink="/tabla" > UNIRSE AL JUEGO </button>
+    <button routerLink="/tabla" [disabled]="!isValidCode()" [ngClass]="{'button-disabled': !isValidCode()}">
+      UNIRSE AL JUEGO
+    </button>
 
     <!-- Botón de retroceso -->
     <div>
-      <button class="text-black text-2xl" routerLink="/componente1">
+      <button class="text-black text-2xl" style="margin-top: 1rem; padding: 8px 15px; min-width: auto;"
+        routerLink="/componente1">
         <i class="fas fa-arrow-left"></i>
       </button>
     </div>
