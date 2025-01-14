@@ -22,12 +22,6 @@ export class GameCodeComponent {
     this.characterCount = this.gameCode.length;
   }
 
-  searchGame(): void {
-    if (this.gameCode.length === 6) {
-      console.log('Buscando juego con código:', this.gameCode);
-    }
-  }
-
   isValidCode(): boolean {
     return this.gameCode.length === 6;
   }

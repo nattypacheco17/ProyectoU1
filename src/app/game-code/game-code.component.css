@@ -63,8 +63,30 @@ input {
   width: 100%;
   max-width: 300px;
   font-size: clamp(14px, 4vw, 16px);
-  padding: clamp(8px, 2vw, 12px);
-  margin: 10px auto;
+  padding: 10px 15px;
+  border: 2px solid #9859f7; /* Borde púrpura */
+  border-radius: 8px; /* Bordes redondeados */
+  background-color: transparent;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+  color: #333; /* Color del texto */
+  text-align: center; /* Centrar el texto */
+}
+
+input::placeholder {
+  color: #c4c4c4; /* Color del texto placeholder */
+}
+
+input:focus {
+  border-color: #6b41b6; /* Color del borde al enfocar */
+  box-shadow: 0 0 5px rgba(107, 65, 182, 0.5); /* Efecto de sombra */
+}
+
+input:disabled {
+  background-color: #f0f0f0; /* Fondo gris claro para deshabilitado */
+  border-color: #cccccc; /* Borde gris */
+  cursor: not-allowed;
+  color: #999999;
 }
 
 button {
