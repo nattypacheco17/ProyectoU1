@@ -5,40 +5,42 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   font-family: 'Arial', sans-serif;
   color: #333;
+  overflow-x: hidden;
   animation: fadeInBody 1s ease-in-out; /* Animación para el cuerpo */
 }
+
 
 /* Animación del fondo parpadeante */
 .background-container {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-image: url('assets/24.png');
   background-size: cover;
   background-position: center;
   animation: blink-background 1.5s ease-in-out; /* Animación combinada */
-
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-
-
 /* Animación al cargar el contenedor de texto */
 .text-center {
   text-align: center;
   padding: 20px 40px; /* Ajuste en padding */
-  background-color: rgba(255, 255, 255, 0.788);
+  background-color: rgba(255, 255, 255, 0.504);
   border-radius: 20px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  width: 80%;
+  width: 75%;
   max-width: 600px;
-  height: auto;
+  height: 70%;
   opacity: 0; /* Comienza invisible */
   animation: fadeIn 2s ease-in-out 0.5s forwards; /* Animación de aparición */
 }
@@ -58,7 +60,7 @@ body {
 
 .text-center p {
   font-size: 1rem;
-  color: #666666;
+  color: #141414;
   margin-bottom: 10px;
   opacity: 0;
   animation: fadeIn 1s ease-in-out 2s forwards; /* Aparición retrasada */
@@ -84,18 +86,6 @@ body {
 
 .text-center button:not([disabled]):hover {
   background-color: #5e09a4;
-}
-
-.player-info {
-  display: inline-flex;
-  align-items: center;
-  margin-bottom: 15px;
-  background-color: #f4f4f4;
-  padding: 10px 15px;
-  border-radius: 30px;
-  font-size: 1.2em;
-  opacity: 0;
-  animation: fadeIn 1.5s ease-in-out 2s forwards; /* Aparición retrasada */
 }
 
 .invite-code {
@@ -170,6 +160,7 @@ body {
 @media (max-width: 768px) {
   .text-center {
     width: 90%; /* Ajustar el ancho para pantallas pequeñas */
+    height: 100vh;
     padding: 15px 30px;
   }
 
@@ -193,8 +184,10 @@ body {
 
 @media (max-width: 480px) {
   .text-center {
-    width: 100%;
+    width: 85%;
+    height: 75%;
     padding: 10px 20px;
+    margin: 0 auto;
   }
 
   .text-center h1 {
@@ -228,12 +221,11 @@ body {
 }
 
 .background-container {
-  background-image: url('assets/24.png');
+  background-image: url('assets/MaquetacionesTelefunken.png');
   background-size: cover;
-  background-repeat: no-repeat;
-  animation: zoom-background 8s ease-in-out infinite;
+  background-repeat:space;
+  height: 100vh;
 }
-
 
 /* Contenedor del avatar y el botón */
 .player-avatar-container {
@@ -279,4 +271,18 @@ body {
 
 .instructions-button:focus {
   outline: none;
+}
+
+.player-name-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
+  z-index: 10; /* Asegura que esté encima */
+  overflow-x: hidden; /* Evita el desbordamiento horizontal */
 }

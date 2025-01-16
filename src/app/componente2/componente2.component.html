@@ -1,9 +1,12 @@
-<body>
-  <div class="background-container">
+<div class="background-container">
+  <!-- Mostrar el formulario de nombre y número de jugadores -->
+  <div *ngIf="showPlayerNameForm" class="player-name-container">
+    <app-player-name-number (formSubmitted)="onFormSubmitted($event)"></app-player-name-number>
+  </div>
 
-    <div class="game-waiting-container text-center">
-
-      <!-- Nueva sección con avatar y botón -->
+  <!-- Mostrar la interfaz del juego solo cuando showPlayerNameForm es false -->
+  <div *ngIf="!showPlayerNameForm" class="main-content">
+    <div class="text-center">
       <div class="player-avatar-container">
         <div class="avatar-frame">
           <img src="assets/avatar.jpg" alt="Avatar" class="avatar-img" />
@@ -12,30 +15,22 @@
       </div>
 
       <div class="mb-6" style="margin-top: 4%;">
-        <img src="../../assets/LogoTelefunken.png"
-          alt="Logo with playing cards" class="mx-auto mb-4" width="100" height="100" />
+        <img src="../../assets/LogoTelefunken.png" alt="Logo with playing cards" class="mx-auto mb-4" width="100" height="100px" />
         <h1 class="title">TELEFUNKEN</h1>
       </div>
 
       <p>Esperando a otros jugadores</p>
       <p><span class="loading-dots">.</span><span class="loading-dots">.</span><span class="loading-dots">.</span></p>
 
-      <!-- Mostrar nombre del jugador -->
-      <div class="player-info">
-        <span class="player-icon">👤</span>
-        <span class="player-name">{{ playerName }}</span>
-      </div>
+      <p class="name-number">Nombre del jugador: <b>{{ playerName }}</b></p>
+      <p class="name-number">Número de participantes: <b>{{ participants }}</b></p>
 
-      <!-- Mostrar código de invitación -->
       <p>Comparte el código con un amigo para que se una a la partida</p>
       <div class="invite-code">{{ gameCode }}</div>
 
-
-      <!-- Botón para copiar el código -->
       <button (click)="copyCode()" class="copy-button">COPIAR</button>
       <button class="cancel-button" routerLink="/tabla" style="margin-left: 10px;">JUGAR</button>
       <button class="cancel-button" routerLink="/" style="margin-left: 10px;">CANCELAR</button>
-
     </div>
   </div>
-</body>
+</div>

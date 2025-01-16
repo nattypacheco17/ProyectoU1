@@ -1,23 +1,32 @@
 import { CommonModule } from '@angular/common';
-import { Component,Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { PrincipalComponent } from '../principal/principal.component';
+import { PlayerNameNumberComponent } from '../player-name-number/player-name-number.component';
 
 @Component({
   selector: 'app-componente2',
   standalone: true,
-  imports: [RouterLink, CommonModule, FormsModule],
+  imports: [RouterLink, CommonModule, FormsModule, PlayerNameNumberComponent],
   templateUrl: './componente2.component.html',
   styleUrls: ['./componente2.component.css']
 })
 export class Componente2Component {
-@Input() playerName: string = ''; // Recibir el nombre del jugador
+  showPlayerNameForm: boolean = true; // Estado inicial
+  playerName: string = '';
+  participants: string = '';
+  gameCode: string = this.generateGameCode();
 
-showInstructions() {
-throw new Error('Method not implemented.');
-}
-  gameCode: string = this.generateGameCode(); // Generar código aleatorio al cargar el componente
+  // Método para manejar los datos recibidos
+  onFormSubmitted(data: { name: string; participants: string }) {
+    this.playerName = data.name;
+    this.participants = data.participants;
+    this.showPlayerNameForm = false; // Cambiar al siguiente estado
+  }
+
+  showInstructions() {
+    alert('Aquí van las instrucciones del juego.');
+  }
 
   // Función para copiar el código
   copyCode() {
@@ -37,5 +46,4 @@ throw new Error('Method not implemented.');
     }
     return code;
   }
-
 }

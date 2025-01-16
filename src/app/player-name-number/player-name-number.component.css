@@ -2,31 +2,39 @@
 .background-container {
   width: 100%;
   height: 100vh;
-  background-image: url('assets/1.png'); /* Cambia esto por la ruta de tu imagen */
+  background-image: url('assets/1.png');
+  /* Cambia esto por la ruta de tu imagen */
   background-size: cover;
   background-position: center;
-  animation: move-background 60s linear infinite; /* Animación de movimiento suave */
+  animation: move-background 60s linear infinite;
+  /* Animación de movimiento suave */
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* Elimina cualquier scroll */
+  overflow: hidden;
+  /* Elimina cualquier scroll */
 }
 
 /* Contenedor principal del contenido */
 .content {
   text-align: center;
   display: flex;
-  flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
-  align-items: center; /* Centra los elementos horizontalmente */
+  flex-direction: column;
+  /* Asegura que los elementos se apilen verticalmente */
+  align-items: center;
+  /* Centra los elementos horizontalmente */
 }
 
 /* Contenedor del texto con franja negra */
 .text-container {
-  background: #2101719a; /* Negro con transparencia */
+  background: #2101719a;
+  /* Negro con transparencia */
   padding: 20px 70px;
   border-radius: 10px;
-  display: inline-block; /* Solo ocupa el ancho del contenido */
-  margin-bottom: 30px; /* Espaciado entre texto y botón */
+  display: inline-block;
+  /* Solo ocupa el ancho del contenido */
+  margin-bottom: 5px;
+  /* Espaciado entre texto y botón */
 }
 
 /* Estilo del texto */
@@ -43,9 +51,12 @@ h1 {
   0% {
     background-position: 0% 0%;
   }
+
   50% {
-    background-position: 100% 100%; /* Desplaza la imagen en diagonal */
+    background-position: 100% 100%;
+    /* Desplaza la imagen en diagonal */
   }
+
   100% {
     background-position: 0% 0%;
   }
@@ -53,45 +64,33 @@ h1 {
 
 /* Animación de desvanecimiento para el texto */
 @keyframes fade-in {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.5;
   }
+
   50% {
     opacity: 1;
   }
 }
 
 /* Evitar el desplazamiento horizontal en toda la página */
-html, body {
+html,
+body {
   width: 100%;
   height: 100%;
-  overflow-x: hidden; /* Elimina el scroll horizontal */
-  overflow-y: hidden; /* Elimina el scroll vertical */
+  overflow-x: hidden;
+  /* Elimina el scroll horizontal */
+  overflow-y: hidden;
+  /* Elimina el scroll vertical */
   margin: 0;
   padding: 0;
 }
+
 .fill:hover,
 .fill:focus {
   box-shadow: inset 0 0 0 2em var(--hover);
-}
-
-.pulse:hover,
-.pulse:focus {
-  -webkit-animation: pulse 1s;
-  animation: pulse 1s;
-  box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
-}
-
-@-webkit-keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 var(--hover);
-  }
-}
-
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 var(--hover);
-  }
 }
 
 button {
@@ -100,7 +99,8 @@ button {
   transition: 0.25s;
 }
 
-button:hover, button:focus {
+button:hover,
+button:focus {
   border-color: var(--hover);
   color: #fff;
 }
@@ -135,11 +135,6 @@ button {
   --hover: #ffffff;
 }
 
-.pulse {
-  --color: #ffffff;
-  --hover: #ffffff;
-}
-
 h1 {
   font-weight: 500;
 }
@@ -149,25 +144,25 @@ code {
   font: inherit;
 }
 
-
 /* Animación de deslizamiento al entrar */
 @keyframes slideIn {
   0% {
     transform: translateX(-50px);
     opacity: 0;
   }
+
   100% {
     transform: translateX(0);
     opacity: 1;
   }
 }
 
-
 /* Animación de desvanecimiento */
 @keyframes fadeIn {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -194,9 +189,6 @@ header h1 {
   animation: fadeIn 1s ease-out;
 }
 
-/* Estilo para el contenedor row */
-
-
 /* Animación y estilo del segundo botón */
 .second-button-container {
   margin-top: 50px;
@@ -205,29 +197,46 @@ header h1 {
 }
 
 .animated-button {
-  background-color:#6000ce;
+  background-color: #6000ce;
   border: 2px solid white;
-  padding: 10px 20px; /* Espaciado interno */
-  border-radius: 30px; /* Bordes redondeados */
-  cursor: pointer; /* Cambia el cursor a puntero */
-  display: flex; /* Usar flexbox */
-  align-items: center; /* Alinear elementos verticalmente */
-  justify-content: center; /* Alinear horizontalmente */
-  gap: 10px; /* Espacio entre el logo y el texto */
-  font-family: Arial, sans-serif; /* Fuente */
-  font-size: 16px; /* Tamaño de letra */
-  font-weight: bold; /* Texto en negrita */
-  color: white; /* Color del texto */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
-  transition: background-color 0.3s ease; /* Transición al pasar el cursor */
+  padding: 10px 20px;
+  /* Espaciado interno */
+  border-radius: 30px;
+  /* Bordes redondeados */
+  cursor: pointer;
+  /* Cambia el cursor a puntero */
+  display: flex;
+  /* Usar flexbox */
+  align-items: center;
+  /* Alinear elementos verticalmente */
+  justify-content: center;
+  /* Alinear horizontalmente */
+  gap: 10px;
+  /* Espacio entre el logo y el texto */
+  font-family: Arial, sans-serif;
+  /* Fuente */
+  font-size: 16px;
+  /* Tamaño de letra */
+  font-weight: bold;
+  /* Texto en negrita */
+  color: white;
+  /* Color del texto */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  /* Sombra */
+  transition: background-color 0.3s ease;
+  /* Transición al pasar el cursor */
 }
 
 .button-logo {
-  width: 24px; /* Ancho del logo */
-  height: 24px; /* Alto del logo */
+  width: 24px;
+  /* Ancho del logo */
+  height: 24px;
+  /* Alto del logo */
 }
+
 .animated-button:hover {
-  background-color: #210171; /* Fondo más claro al pasar el cursor */
+  background-color: #210171;
+  /* Fondo más claro al pasar el cursor */
 }
 
 @keyframes fade-in {
@@ -235,40 +244,42 @@ header h1 {
     opacity: 0;
     transform: translateY(0);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-
-
 /* Contenedor del logo */
 .logo-container {
-  margin-bottom: 20px; /* Espacio entre el logo y el texto */
+  margin-bottom: 20px;
+  /* Espacio entre el logo y el texto */
 }
 
 .logo {
-  max-width: 150px; /* Ajusta el tamaño del logo */
-  height: auto; /* Mantén la proporción de la imagen */
+  max-width: 150px;
+  /* Ajusta el tamaño del logo */
+  height: auto;
+  /* Mantén la proporción de la imagen */
 }
 
 /* Contenedor del texto */
 .text-container {
-  background: #2101719a; /* Fondo oscuro con transparencia */
+  background: #2101719a;
+  /* Fondo oscuro con transparencia */
   padding: 20px 70px;
   border-radius: 10px;
-  display: inline-block; /* Ajusta el tamaño al contenido */
-  margin-top: 0; /* Quita espacio adicional si es necesario */
+  display: inline-block;
+  /* Ajusta el tamaño al contenido */
+  margin-top: 0;
+  /* Quita espacio adicional si es necesario */
 }
 
-
-
-
-.text-container{
- color: white;
- font-size: 1rem;
- font-weight: bold;
+.text-container {
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 /* Animaciones de entrada y salida */
@@ -277,6 +288,7 @@ header h1 {
     opacity: 0;
     transform: scale(0.9);
   }
+
   100% {
     opacity: 1;
     transform: scale(1);
@@ -288,6 +300,7 @@ header h1 {
     opacity: 1;
     transform: scale(1);
   }
+
   100% {
     opacity: 0;
     transform: scale(0.9);
@@ -302,26 +315,6 @@ header h1 {
   animation: fadeOut 0.5s ease-in-out;
 }
 
-/* Botón pulsante */
-.pulse {
-  animation: pulseEffect 1.5s infinite;
-}
-
-@keyframes pulseEffect {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
-  }
-  70% {
-    transform: scale(1.1);
-    box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0);
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-  }
-}
-
 /* Botones animados */
 .animated-button {
   transition: transform 0.3s, background-color 0.3s ease;
@@ -333,7 +326,12 @@ header h1 {
   background-color: #210171;
 }
 
-
+.form-select{
+      margin-bottom: 20px;
+}
+.form-control{
+      margin-bottom: 15px;
+}
 
 .name-input-container {
   margin-bottom: 10px;
@@ -344,11 +342,16 @@ header h1 {
   border: 1px solid #ccc;
   text-align: center;
   align-items: center;
-  display: flex; /* Usamos flexbox para centrar */
-  justify-content: center; /* Centrar horizontalmente */
-  align-items: center; /* Centrar verticalmente */
-  margin-top: 15px; /* Espaciado superior */
-  width: 100%; /* Aseguramos que ocupe todo el ancho */
+  display: flex;
+  /* Usamos flexbox para centrar */
+  justify-content: center;
+  /* Centrar horizontalmente */
+  align-items: center;
+  /* Centrar verticalmente */
+  margin-top: 15px;
+  /* Espaciado superior */
+  width: 100%;
+  /* Aseguramos que ocupe todo el ancho */
   text-align: center;
   align-items: center;
 }
@@ -371,67 +374,32 @@ header h1 {
 /* Centrado para todos los contenedores */
 .centered-container {
   display: flex;
-  flex-direction: column; /* Apilar verticalmente */
-  justify-content: center; /* Centrar verticalmente */
-  align-items: center; /* Centrar horizontalmente */
+  flex-direction: column;
+  /* Apilar verticalmente */
+  justify-content: center;
+  /* Centrar verticalmente */
+  align-items: center;
+  /* Centrar horizontalmente */
   text-align: center;
-  height: 100%; /* Ocupar toda la altura del contenedor */
+  height: 100%;
+  /* Ocupar toda la altura del contenedor */
 }
 
 .button-container {
   display: flex;
-  flex-direction: column; /* Alinear botones en una columna */
-  gap: 15px; /* Espaciado entre botones */
+  flex-direction: column;
+  /* Alinear botones en una columna */
+  gap: 15px;
+  /* Espaciado entre botones */
   margin-top: 20px;
 }
 
 /* Mensaje de validación */
 .validation-message {
-  color: #faabed; /* Color rojo para el error */
+  color: #faabed;
+  /* Color rojo para el error */
   font-size: 14px;
   margin-top: 5px;
   text-align: center;
   font-weight: bold;
 }
-
-
-/* Botón "Crear Sala" */
-.create-room-button {
-  background-color: #bd00ce; /* Verde */
-  color: white;
-  border: 2px solid #bd00ce;
-  padding: 10px 20px;
-  border-radius: 30px;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: transform 0.3s, background-color 0.3s ease;
-}
-
-.create-room-button:hover {
-  background-color: #e856f5; /* Verde más oscuro al pasar el cursor */
-  transform: translateY(-5px);
-}
-
-/* Botón "Unirme a la Sala" */
-.join-room-button {
-  background-color: #6000ce; /* Azul */
-  color: white;
-  border: 2px solid #6000ce;
-  padding: 10px 20px;
-  border-radius: 30px;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: transform 0.3s, background-color 0.3s ease;
-}
-
-.join-room-button:hover {
-  background-color: #9848f5; /* Azul más oscuro al pasar el cursor */
-  transform: translateY(-5px);
-}
-
-
-
-
-

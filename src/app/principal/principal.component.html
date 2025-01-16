@@ -14,53 +14,10 @@
       <h1>TELEFUNKEN</h1>
     </div>
 
-    <div
-    class="buttons"
-    *ngIf="!showNameInput && !showGameOptions"
-    [ngClass]="animationState">
-    <button class="pulse" (click)="handleStart()">COMENZAR</button>
-  </div>
- <!-- Cuadro para ingresar el nombre -->
- <div class="name-input-container centered-container"
- *ngIf="showNameInput"
- [ngClass]="animationState">
- <div class="text-container">
-   <p>Ingresa tu nombre:</p>
-   <input
-     type="text"
-     [(ngModel)]="playerName"
-     (input)="validateName()"
-     placeholder="Tu nombre"
-     class="form-control" />
-
-     <p
-     class="validation-message"
-     *ngIf="nameError">
-     {{ nameError }}
-   </p>
-
-   <p>Elige el número de participantes:</p>
-   <select [(ngModel)]="selectedParticipants" class="form-select" (change)="validateParticipants()">
-     <option value="">Seleccione...</option>
-     <option *ngFor="let number of participantOptions" [value]="number">{{ number }}</option>
-   </select>
-   <p class="validation-message" *ngIf="participantError">{{ participantError }}</p>
-
-
-   <button class="animated-button" (click)="saveName()" [disabled]="nameError || participantError">GUARDAR</button>
+    <!-- Opciones de juego -->
+    <div class="game-options centered-container" [ngClass]="animationState">
+      <button class="create-room-button" routerLink="/componente2">CREAR SALA</button>
+      <button class="join-room-button" routerLink="/game-code">UNIRME A LA SALA</button>
+    </div>
   </div>
 </div>
-
-
-<!-- Opciones de juego -->
-<div
- class="game-options centered-container"
- *ngIf="showGameOptions"
- [ngClass]="animationState">
- <button class="create-room-button" routerLink="/componente2">CREAR SALA</button>
- <button class="join-room-button" routerLink="/game-code">UNIRME A LA SALA</button>
-</div>
-  </div>
-</div>
-
-

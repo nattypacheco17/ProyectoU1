@@ -214,12 +214,6 @@ body.modal-active .container {
   }
 }
 
-
-<<<<<<< Updated upstream
-
-
-
-
 /* Contenedor del avatar y el botón */
 .player-avatar-container {
   display: flex;
@@ -264,7 +258,6 @@ body.modal-active .container {
 
 .instructions-button:focus {
   outline: none;
-=======
 @keyframes wave-background {
   0%, 100% {
     background-position: 0% 50%;
@@ -273,11 +266,11 @@ body.modal-active .container {
     background-position: 100% 50%;
   }
 }
+}
 
 .background-container {
   background-image: url('assets/22.png');
   background-size: 200%;
   background-repeat: no-repeat;
   animation: wave-background 15s ease-in-out infinite;
->>>>>>> Stashed changes
 }

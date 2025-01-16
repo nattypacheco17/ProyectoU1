@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-principal',
   standalone: true,
@@ -27,9 +26,6 @@ export class PrincipalComponent {
 
 
   @Output() nameSaved = new EventEmitter<string>(); // Para emitir el nombre al Componente 2
-
-
-
 
   validateName() {
     // Validación para el nombre
@@ -74,7 +70,4 @@ export class PrincipalComponent {
       }, 500); // Retardo de medio segundo para un efecto suave
     }
   }
-
-
 }
-
