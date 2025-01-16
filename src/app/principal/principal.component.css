@@ -194,135 +194,246 @@ header h1 {
   animation: fadeIn 1s ease-out;
 }
 
+/* Estilo para el contenedor row */
 
-/* Estilo de las tarjetas */
-.card {
-  background-color: #6a4c8c; /* Morado suave */
-  color: white; /* Texto blanco */
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px; /* Espacio entre las tarjetas */
-  padding: 20px;
-  width: 100%;
-  max-width: 900px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: slideIn 0.6s ease-out;
-  text-align: justify;
-  align-content: center;
 
+/* Animación y estilo del segundo botón */
+.second-button-container {
+  margin-top: 50px;
+  animation: fade-in 0.5s ease-in-out;
+  text-align: center;
 }
 
-/* Animación de deslizamiento al entrar */
-@keyframes slideIn {
+.animated-button {
+  background-color:#6000ce;
+  border: 2px solid white;
+  padding: 10px 20px; /* Espaciado interno */
+  border-radius: 30px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor a puntero */
+  display: flex; /* Usar flexbox */
+  align-items: center; /* Alinear elementos verticalmente */
+  justify-content: center; /* Alinear horizontalmente */
+  gap: 10px; /* Espacio entre el logo y el texto */
+  font-family: Arial, sans-serif; /* Fuente */
+  font-size: 16px; /* Tamaño de letra */
+  font-weight: bold; /* Texto en negrita */
+  color: white; /* Color del texto */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+  transition: background-color 0.3s ease; /* Transición al pasar el cursor */
+}
+
+.button-logo {
+  width: 24px; /* Ancho del logo */
+  height: 24px; /* Alto del logo */
+}
+.animated-button:hover {
+  background-color: #210171; /* Fondo más claro al pasar el cursor */
+}
+
+@keyframes fade-in {
   0% {
-    transform: translateX(-50px);
     opacity: 0;
+    transform: translateY(0);
   }
   100% {
-    transform: translateX(0);
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+
+/* Contenedor del logo */
+.logo-container {
+  margin-bottom: 20px; /* Espacio entre el logo y el texto */
 }
 
-/* Estilos para los encabezados */
-.card h2 {
-  font-size: 1.0em;
-  margin-bottom: 15px;
-  color: #fff;
-  font-weight: bold;
+.logo {
+  max-width: 150px; /* Ajusta el tamaño del logo */
+  height: auto; /* Mantén la proporción de la imagen */
 }
 
-/* Listas dentro de las cartas */
-.card ul {
-  list-style-type: disc;
-  margin-left: 20px;
-  color: #e6e6e6;
+/* Contenedor del texto */
+.text-container {
+  background: #2101719a; /* Fondo oscuro con transparencia */
+  padding: 20px 70px;
+  border-radius: 10px;
+  display: inline-block; /* Ajusta el tamaño al contenido */
+  margin-top: 0; /* Quita espacio adicional si es necesario */
 }
 
-/* Animación de desvanecimiento */
+
+
+
+.text-container{
+ color: white;
+ font-size: 1rem;
+ font-weight: bold;
+}
+
+/* Animaciones de entrada y salida */
 @keyframes fadeIn {
   0% {
     opacity: 0;
+    transform: scale(0.9);
   }
   100% {
     opacity: 1;
+    transform: scale(1);
   }
 }
 
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
 }
 
-.card h2 {
-  font-size: 1.8em;
-  margin-bottom: 15px;
-  color: #fff;
+.fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.fadeOut {
+  animation: fadeOut 0.5s ease-in-out;
+}
+
+/* Botón pulsante */
+.pulse {
+  animation: pulseEffect 1.5s infinite;
+}
+
+@keyframes pulseEffect {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+/* Botones animados */
+.animated-button {
+  transition: transform 0.3s, background-color 0.3s ease;
+  align-items: center;
+}
+
+.animated-button:hover {
+  transform: translateY(-5px);
+  background-color: #210171;
+}
+
+
+
+.name-input-container {
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  text-align: center;
+  align-items: center;
+  display: flex; /* Usamos flexbox para centrar */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  margin-top: 15px; /* Espaciado superior */
+  width: 100%; /* Aseguramos que ocupe todo el ancho */
+  text-align: center;
+  align-items: center;
+}
+
+.game-options {
+  margin-top: 20px;
+  text-align: center;
+  align-items: center;
+}
+
+.game-options .animated-button {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #200171;
+  color: white;
+  text-align: center;
+  align-items: center;
+}
+
+
+
+/* Centrado para todos los contenedores */
+.centered-container {
+  display: flex;
+  flex-direction: column; /* Apilar verticalmente */
+  justify-content: center; /* Centrar verticalmente */
+  align-items: center; /* Centrar horizontalmente */
+  text-align: center;
+  height: 100%; /* Ocupar toda la altura del contenedor */
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column; /* Alinear botones en una columna */
+  gap: 15px; /* Espaciado entre botones */
+  margin-top: 20px;
+}
+
+/* Mensaje de validación */
+.validation-message {
+  color: #faabed; /* Color rojo para el error */
+  font-size: 14px;
+  margin-top: 5px;
+  text-align: center;
   font-weight: bold;
 }
 
-.card ul {
-  list-style-type: disc;
-  margin-left: 20px;
-  color: #e6e6e6;
+
+/* Botón "Crear Sala" */
+.create-room-button {
+  background-color: #bd00ce; /* Verde */
+  color: white;
+  border: 2px solid #bd00ce;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s ease;
 }
 
-/* Animación para que la imagen se deslice desde la izquierda */
-@keyframes slideFromLeft {
-    0% {
-        transform: translateX(-100%); /* Empieza fuera de la pantalla a la izquierda */
-    }
-    50% {
-        transform: translateX(100%); /* Desliza la imagen hacia la derecha */
-    }
-    100% {
-        transform: translateX(-100%); /* Vuelve fuera de la pantalla a la izquierda */
-    }
+.create-room-button:hover {
+  background-color: #e856f5; /* Verde más oscuro al pasar el cursor */
+  transform: translateY(-5px);
 }
 
-/* Animación para que la imagen se deslice desde la derecha */
-@keyframes slideFromRight {
-    0% {
-        transform: translateX(100%); /* Empieza fuera de la pantalla a la derecha */
-    }
-    50% {
-        transform: translateX(-100%); /* Desliza la imagen hacia la izquierda */
-    }
-    100% {
-        transform: translateX(100%); /* Vuelve fuera de la pantalla a la derecha */
-    }
+/* Botón "Unirme a la Sala" */
+.join-room-button {
+  background-color: #6000ce; /* Azul */
+  color: white;
+  border: 2px solid #6000ce;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s ease;
 }
 
-/* Estilo para la imagen que se desliza desde la izquierda */
-.poker-img-left {
-    width: 200px; /* Ajusta el tamaño de la imagen */
-    position: absolute;
-    left: -100px; /* Coloca la imagen más a la izquierda */
-    animation: slideFromLeft 4s ease-in-out infinite; /* Animación de deslizamiento desde la izquierda */
-}
-
-/* Estilo para la imagen que se desliza desde la derecha */
-.poker-img-right {
-    width: 200px; /* Ajusta el tamaño de la imagen */
-    position: absolute;
-    right: -100px; /* Coloca la imagen más a la derecha */
-    animation: slideFromRight 4s ease-in-out infinite; /* Animación de deslizamiento desde la derecha */
-    height: auto;
-
+.join-room-button:hover {
+  background-color: #9848f5; /* Azul más oscuro al pasar el cursor */
+  transform: translateY(-5px);
 }
 
 
-/* Estilo para el contenedor row */
-.row {
-  display: flex;
-  flex-wrap: wrap; /* Permite que las columnas se ajusten en pantallas más pequeñas */
-  gap: 20px; /* Espacio entre las columnas */
-  justify-content: center; /* Centra las columnas dentro del row */
-  margin-bottom: 50px; /* Espacio inferior para el row */
-}
+
+
+

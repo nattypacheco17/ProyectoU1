@@ -13,6 +13,7 @@
   border-radius: 10px; /* Bordes redondeados */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
   max-width: 50%; /* Limita el ancho */
+
   margin: 50px auto; /* Centra el contenedor con margen superior */
 }
 
@@ -22,6 +23,18 @@ h1 {
   font-weight: bold;
   margin-bottom: 15px;
   color: #9859f7;
+}
+
+.background-container {
+  width: 100%;
+  height: 100vh;
+  background-image: url('assets/22.png'); /* Cambia esto por la ruta de tu imagen */
+  background-size: cover;
+  background-position: center;
+  animation: blink-background 2s infinite; /* Animación parpadeante */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Estilo del logo */
@@ -202,6 +215,7 @@ body.modal-active .container {
 }
 
 
+<<<<<<< Updated upstream
 
 
 
@@ -250,4 +264,20 @@ body.modal-active .container {
 
 .instructions-button:focus {
   outline: none;
+=======
+@keyframes wave-background {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.background-container {
+  background-image: url('assets/22.png');
+  background-size: 200%;
+  background-repeat: no-repeat;
+  animation: wave-background 15s ease-in-out infinite;
+>>>>>>> Stashed changes
 }

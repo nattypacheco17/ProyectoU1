@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { PrincipalComponent } from '../principal/principal.component';
 
 @Component({
   selector: 'app-componente2',
@@ -11,10 +12,11 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./componente2.component.css']
 })
 export class Componente2Component {
+@Input() playerName: string = ''; // Recibir el nombre del jugador
+
 showInstructions() {
 throw new Error('Method not implemented.');
 }
-  playerName: string = 'njeslon'; // Puedes cambiar esto según la lógica que uses
   gameCode: string = this.generateGameCode(); // Generar código aleatorio al cargar el componente
 
   // Función para copiar el código

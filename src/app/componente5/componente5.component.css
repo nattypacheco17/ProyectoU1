@@ -10,7 +10,7 @@ body {
   background-size: cover;
   background-position: center;
   font-family: 'Arial', sans-serif;
-  color: #4a4a4a; /* Cambiado */
+  color: #9859f7; /* Cambiado */
 }
 
 .background-container {
@@ -51,8 +51,8 @@ body {
 .title {
   font-size: 1.8rem;
   font-weight: bold;
-  color: #4a4a4a; /* Cambiado */
-  margin-bottom: 15px;
+  color: #9859f7; /* Cambiado */
+  margin-bottom: 10px;
 }
 
 /* Lista de ganadores */
@@ -164,7 +164,7 @@ body {
   background-size: cover;
   background-position: center;
   font-family: 'Arial', sans-serif;
-  color: #4a4a4a;
+  color: #9859f7;
   opacity: 0; /* Para ocultar el contenido inicialmente */
   animation: fadeIn 1s forwards; /* Animación de desvanecimiento */
 }
@@ -223,7 +223,7 @@ body {
 .title {
   font-size: 1.8rem;
   font-weight: bold;
-  color: #4a4a4a;
+  color: #9859f7;
   margin-bottom: 15px;
 }
 
