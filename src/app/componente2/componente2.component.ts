@@ -11,6 +11,7 @@ import { PlayerNameNumberComponent } from '../player-name-number/player-name-num
   templateUrl: './componente2.component.html',
   styleUrls: ['./componente2.component.css']
 })
+
 export class Componente2Component {
   showPlayerNameForm: boolean = true; // Estado inicial
   playerName: string = '';

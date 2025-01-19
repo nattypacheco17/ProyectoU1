@@ -16,7 +16,15 @@ export class GameCodeComponent {
   playerName: string = '';
   nameError: string = ''; // Mensaje de error de validación
 
-  @Output() formSubmitted = new EventEmitter<{name: string}>();
+  @Output() formSubmitted = new EventEmitter<{ name: string }>();
+
+  saveName() {
+    this.validateName();
+    if (!this.nameError) {
+      // Emitir solo los datos necesarios
+      this.formSubmitted.emit({name: this.playerName});
+    }
+  }
 
   validateName() {
     // Validación para el nombre
@@ -39,14 +47,5 @@ export class GameCodeComponent {
     return this.gameCode.length === 6;
   }
 
-  saveName() {
-    this.validateName();
-    this.isValidCode();
-    if (!this.nameError && !this.isValidCode) {
-      // Emitir solo los datos necesarios
-      this.formSubmitted.emit({
-        name: this.playerName
-            });
-    }
-  }
+
 }
