@@ -1,54 +1,39 @@
-/* Estilo general */
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  font-family: 'Arial', sans-serif;
-  color: #333;
-  overflow-x: hidden;
-  animation: fadeInBody 1s ease-in-out; /* Animación para el cuerpo */
-}
-
-
-/* Animación del fondo parpadeante */
 .background-container {
   width: 100%;
-  height: 100%;
+  min-height: 100vh; /* cambiado de height a min-height para mejor responsividad */
   background-image: url('assets/24.png');
   background-size: cover;
   background-position: center;
-  animation: blink-background 1.5s ease-in-out; /* Animación combinada */
+  animation: move-background 60s linear infinite;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px; /* Espacio para evitar que el contenido toque los bordes */
 }
+
 
 /* Animación al cargar el contenedor de texto */
 .text-center {
   text-align: center;
-  padding: 20px 40px; /* Ajuste en padding */
-  background-color: rgba(255, 255, 255, 0.504);
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.822);
   border-radius: 20px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  width: 75%;
-  max-width: 600px;
-  height: 70%;
-  opacity: 0; /* Comienza invisible */
-  animation: fadeIn 2s ease-in-out 0.5s forwards; /* Animación de aparición */
+  width: 90%;
+  max-width: 400px;
+  color: #150020;
+  padding: clamp(15px, 5vw, 30px); /* padding responsivo */
+  margin: 0 auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .text-center img {
   border-radius: 50%;
-  opacity: 0;
-  animation: fadeIn 1s ease-in-out 1s forwards; /* Aparición retrasada */
+  opacity: 1;
 }
 
 .title {
@@ -60,10 +45,8 @@ body {
 
 .text-center p {
   font-size: 1rem;
-  color: #141414;
   margin-bottom: 10px;
-  opacity: 0;
-  animation: fadeIn 1s ease-in-out 2s forwards; /* Aparición retrasada */
+  opacity: 1;
 }
 
 /* Botones */
@@ -75,10 +58,14 @@ body {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
-  opacity: 0;
-  animation: fadeInUp 1.2s ease-in-out 2.5s forwards; /* Aparición con desplazamiento */
+  opacity: 1;
 }
 
+.text-compartir{
+  color: #e91edf;
+  font-weight: bold;
+
+}
 .text-center button:not([disabled]) {
   background-color: #6b41b6;
   color: white;
@@ -96,8 +83,7 @@ body {
 
 .copy-button, .cancel-button {
   margin: 5px 10px; /* Ajustar los márgenes para que no queden muy juntos */
-  opacity: 0;
-  animation: fadeInUp 1.5s ease-in-out 2.8s forwards; /* Aparición retrasada con desplazamiento */
+  opacity: 1;
 }
 
 /* Animación de puntos de carga */
@@ -108,105 +94,30 @@ body {
   margin-left: 2px;
 }
 
+/* Animación de movimiento suave para el fondo */
+@keyframes move-background {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%; /* Desplaza la imagen en diagonal */
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+
 @keyframes wave {
   0%, 100% {
-    transform: translateY(0);
+    transform: translateY(1);
   }
   50% {
     transform: translateY(-10px);
   }
 }
 
-/* Animaciones */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes blink-background {
-  0%, 100% {
-    filter: brightness(1);
-  }
-  50% {
-    filter: brightness(1.2);
-  }
-}
-
-@keyframes fadeInBody {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* Media queries para pantallas más pequeñas */
-@media (max-width: 768px) {
-  .text-center {
-    width: 90%; /* Ajustar el ancho para pantallas pequeñas */
-    height: 100vh;
-    padding: 15px 30px;
-  }
-
-  .text-center h1 {
-    font-size: 1.5rem;
-  }
-
-  .invite-code {
-    font-size: 1.3em;
-  }
-
-  .player-info {
-    font-size: 1em;
-  }
-
-  .copy-button, .cancel-button {
-    font-size: 0.9rem; /* Reducir el tamaño de los botones */
-    padding: 8px 15px;
-  }
-}
-
-@media (max-width: 480px) {
-  .text-center {
-    width: 85%;
-    height: 75%;
-    padding: 10px 20px;
-    margin: 0 auto;
-  }
-
-  .text-center h1 {
-    font-size: 1.2rem;
-  }
-
-  .invite-code {
-    font-size: 1.2em;
-  }
-
-  .player-info {
-    font-size: 0.9em;
-  }
-
-  .copy-button, .cancel-button {
-    font-size: 0.8rem;
-    padding: 7px 10px;
-  }
-}
 
 @keyframes zoom-background {
   0% {
@@ -220,12 +131,7 @@ body {
   }
 }
 
-.background-container {
-  background-image: url('assets/MaquetacionesTelefunken.png');
-  background-size: cover;
-  background-repeat:space;
-  height: 100vh;
-}
+
 
 /* Contenedor del avatar y el botón */
 .player-avatar-container {
@@ -286,3 +192,65 @@ body {
   z-index: 10; /* Asegura que esté encima */
   overflow-x: hidden; /* Evita el desbordamiento horizontal */
 }
+
+/* Media Queries para ajustes específicos */
+@media (max-width: 360px) {
+  .container {
+    padding: 10px;
+  }
+
+  .player-avatar-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  button {
+    min-width: 120px;
+    font-size: 14px;
+  }
+}
+
+@media (max-height: 600px) {
+  .container {
+    padding: 15px;
+    margin: 10px 0;
+  }
+
+  .logo {
+    width: 60px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+}
+.form-control{
+  margin-bottom: 15px;
+}
+
+.validation-message {
+  color: #f874e2;
+  /* Color rojo para el error */
+  font-size: 14px;
+  margin-top: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+/* Asegura que la animación del fondo funcione en todos los dispositivos */
+@keyframes zoom-background {
+  0% {
+    background-size: cover;
+  }
+  50% {
+    background-size: 110% 110%;
+  }
+  100% {
+    background-size: cover;
+  }
+}
+
+
+

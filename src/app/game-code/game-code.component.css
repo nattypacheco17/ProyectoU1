@@ -4,7 +4,7 @@
   background-image: url('assets/24.png');
   background-size: cover;
   background-position: center;
-  animation: blink-background 2s infinite;
+  animation: move-background 60s linear infinite; /* Animación de movimiento suave */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,6 +49,7 @@
 }
 
 .description {
+  font-weight: bold;
   margin-bottom: clamp(10px, 3vw, 20px);
   font-size: clamp(14px, 4vw, 16px); /* texto responsivo */
 }
@@ -69,12 +70,12 @@ input {
   background-color: transparent;
   outline: none;
   transition: border-color 0.3s ease-in-out;
-  color: #333; /* Color del texto */
+  color: #000000; /* Color del texto */
   text-align: center; /* Centrar el texto */
 }
 
 input::placeholder {
-  color: #c4c4c4; /* Color del texto placeholder */
+  color: #474747; /* Color del texto placeholder */
 }
 
 input:focus {
@@ -152,13 +153,26 @@ button {
 .instructions-button:focus {
   outline: none;
 }
+/* Animación de movimiento suave para el fondo */
+@keyframes move-background {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%; /* Desplaza la imagen en diagonal */
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
 
 /* Media Queries para ajustes específicos */
 @media (max-width: 360px) {
   .container {
     padding: 10px;
   }
-  
+
   .player-avatar-container {
     flex-direction: column;
     gap: 1rem;
@@ -185,6 +199,19 @@ button {
     margin-bottom: 10px;
   }
 }
+.form-control{
+  margin-bottom: 15px;
+}
+
+.validation-message {
+  color: #f874e2;
+  /* Color rojo para el error */
+  font-size: 14px;
+  margin-top: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
 
 /* Asegura que la animación del fondo funcione en todos los dispositivos */
 @keyframes zoom-background {
