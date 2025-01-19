@@ -401,7 +401,7 @@ header h1 {
   color: white;
   border: 2px solid #bd00ce;
   padding: 10px 20px;
-  border-radius: 30px;
+  border-radius: 5px;
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
@@ -419,7 +419,7 @@ header h1 {
   color: white;
   border: 2px solid #6000ce;
   padding: 10px 20px;
-  border-radius: 30px;
+  border-radius: 5px;
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;

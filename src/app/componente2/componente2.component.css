@@ -86,12 +86,45 @@
   opacity: 1;
 }
 
-/* Animación de puntos de carga */
 .loading-dots {
-  display: inline-block;
-  animation: wave 1.5s infinite ease-in-out;
-  font-size: 24px;
-  margin-left: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px; /* Espacio entre los puntos */
+  margin-top: 20px; /* Separación del resto del contenido */
+  margin-bottom: 20px; /* Separación del resto del contenido */
+
+}
+
+.loading-dots span {
+  width: 10px;
+  height: 10px;
+  background-color: #6b41b6; /* Color de los puntos */
+  border-radius: 50%; /* Hace que los puntos sean circulares */
+  animation: wave 1.5s infinite ease-in-out; /* Animación de onda */
+}
+
+.loading-dots span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.loading-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: scale(1); /* Tamaño inicial y final */
+    opacity: 0.6; /* Opacidad inicial y final */
+  }
+  50% {
+    transform: scale(1.5); /* Agranda el punto */
+    opacity: 1; /* Más visible en el pico */
+  }
 }
 
 /* Animación de movimiento suave para el fondo */

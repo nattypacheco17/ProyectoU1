@@ -201,7 +201,7 @@ header h1 {
   border: 2px solid white;
   padding: 10px 20px;
   /* Espaciado interno */
-  border-radius: 30px;
+  border-radius: 5px;
   /* Bordes redondeados */
   cursor: pointer;
   /* Cambia el cursor a puntero */
