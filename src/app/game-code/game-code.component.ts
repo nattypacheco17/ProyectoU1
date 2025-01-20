@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, Output, EventEmitter} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -13,29 +13,26 @@ import { CommonModule } from '@angular/common';
 export class GameCodeComponent {
   gameCode: string = '';
   characterCount: number = 0;
-  playerName: string = '';
-  nameError: string = ''; // Mensaje de error de validación
+  nameError: string = '';
+  nombreJugador: string = '';
 
-  @Output() formSubmitted = new EventEmitter<{ name: string }>();
+  @Output() nombre = new EventEmitter<string>();
 
-  saveName() {
-    this.validateName();
-    if (!this.nameError) {
-      // Emitir solo los datos necesarios
-      this.formSubmitted.emit({name: this.playerName});
-    }
+  enviarNombre() {
+    this.nombre.emit(this.nombreJugador);
   }
 
   validateName() {
     // Validación para el nombre
-    if (!this.playerName) {
+    if (!this.nombreJugador) {
       this.nameError = 'Por favor ingresa tu nombre.';
-    } else if (this.playerName.length < 3) {
+    } else if (this.nombreJugador.length < 3) {
       this.nameError = 'El nombre debe tener al menos 3 caracteres.';
     } else {
       this.nameError = ''; // No hay errores
     }
   }
+
 
   showInstructions() {
     throw new Error('Metodo no impelmentado.');

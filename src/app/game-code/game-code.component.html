@@ -9,22 +9,24 @@
     </div>
 
     <!-- Título -->
-<div>
-  <h1 class="title">TELEFUNKEN</h1>
-</div>
+    <div>
+      <h1 class="title">TELEFUNKEN</h1>
+    </div>
     <!-- Logo -->
     <div class="logo-container">
       <img src="../../assets/LogoTelefunken.png" alt="Logo with playing cards" class="logo" />
     </div>
-    <!-- Instrucción e input -->
+    <!-- Instrucción e input nombre -->
+
     <p class="description "> Ingresa tu nombre </p>
-    <input type="text" [(ngModel)]="playerName" (input)="validateName()" placeholder="Tu nombre"
-    class="form-control" />
+    <input type="text" [(ngModel)]="nombreJugador" (input)="validateName()" placeholder="Tu nombre"
+      class="form-control" />
 
     <p class="validation-message" *ngIf="nameError">
       {{ nameError }}
     </p>
 
+    <!-- Instrucción e input Codigo -->
     <div class="name-input">
       <p class="description"> Introduce el código del juego </p>
       <input placeholder="Código" type="text" [(ngModel)]="gameCode" (input)="updateCharacterCount()" maxlength="6" />
@@ -32,14 +34,13 @@
     </div>
 
     <!-- Botón principal -->
-    <button routerLink="/SalaEspera" [disabled]="!isValidCode()" [ngClass]="{'button-disabled': !isValidCode()}">
-      UNIRSE AL JUEGO
+    <button (click)="enviarNombre()" routerLink="/SalaEspera" [disabled]="!isValidCode()"
+      [ngClass]="{'button-disabled': !isValidCode()}">JUGAR
     </button>
 
     <!-- Botón de retroceso -->
     <div>
-      <button class="text-black text-2xl" style="margin-top: 1rem; padding: 8px 15px; min-width: auto;"
-        routerLink="/">
+      <button class="text-black text-2xl" style="margin-top: 1rem; padding: 8px 15px; min-width: auto;" routerLink="/">
         <i class="fas fa-arrow-left"></i>
       </button>
     </div>

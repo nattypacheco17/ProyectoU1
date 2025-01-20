@@ -15,7 +15,7 @@ export const routes: Routes = [
   { path: 'game-code', component: GameCodeComponent},
   { path: 'componente5', component: Componente5Component},
   { path: 'PlayerNameNumber', component: PlayerNameNumberComponent},
-  { path: 'SalaEspera', component: SalaEsperaComponent}
+  { path: 'sala-espera', component: SalaEsperaComponent}
 
 ];
 

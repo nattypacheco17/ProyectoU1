@@ -61,8 +61,7 @@
 }
 
 input {
-  width: 100%;
-  max-width: 300px;
+    max-width: 300px;
   font-size: clamp(14px, 4vw, 16px);
   padding: 10px 15px;
   border: 2px solid #9859f7; /* Borde púrpura */

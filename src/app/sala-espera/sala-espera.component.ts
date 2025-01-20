@@ -12,20 +12,16 @@ import { GameCodeComponent } from '../game-code/game-code.component';
   styleUrl: './sala-espera.component.css'
 })
 
-export class SalaEsperaComponent {
-  playerName: string = '';
+export class SalaEsperaComponent  {
+nombreRecibido: string = '';
+showPlayerNameForm: boolean = true;
 
-  // Método para manejar los datos recibidos
-  onFormSubmitted(data: { name: string}) {
-    this.playerName = data.name;
-  }
-
+recibirNombre(nombreJugador: string) {
+  this.nombreRecibido = nombreJugador;
+  this.showPlayerNameForm = false;
+}
 
   showInstructions() {
     throw new Error('Metodo no impelmentado.');
   }
-
 }
-
-
-

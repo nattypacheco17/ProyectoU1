@@ -1,6 +1,11 @@
 <div class="background-container">
-  <div class="container">
-    <!-- Nueva sección con avatar y botón -->
+
+<!-- Mostrar el formulario de nombre y número de jugadores -->
+<div *ngIf="showPlayerNameForm" class="game-code-container">
+  <app-game-code (nombre) = 'recibirNombre($event)'></app-game-code>
+</div>
+
+  <div *ngIf="!showPlayerNameForm" class="container">
     <div class="player-avatar-container">
       <div class="avatar-frame">
         <img src="assets/avatar.jpg" alt="Avatar" class="avatar-img" />
@@ -8,27 +13,18 @@
       <button class="instructions-button" (click)="showInstructions()">INSTRUCCIONES</button>
     </div>
 
-    <!-- Título -->
-<div>
-  <h1 class="title">TELEFUNKEN</h1>
-</div>
-<div class="logo-container">
-  <img src="../../assets/LogoTelefunken.png" alt="Logo with playing cards" class="logo" />
-</div>
-    <!-- Instrucción e input -->
-
-    <p>Nombre del jugador: {{ playerName }}</p>
-      <p class="description ">Espera que el anfitrión inicie el juego </p>
-    <div class="loading-dots">
-      <span></span>
-      <span></span>
-      <span></span>
+    <div>
+      <h1 class="title">TELEFUNKEN</h1>
     </div>
+    <div class="logo-container">
+      <img src="../../assets/LogoTelefunken.png" alt="Logo with playing cards" class="logo" />
+    </div>
+    <p>Nombre del jugador: {{ nombreRecibido }}</p>
+
+    <p class="description">Espera que el anfitrión inicie el juego</p>
+    <div class="loading-dots"></div>
     <div>
       <button class="cancel-button" routerLink="/" style="margin-left: 10px;">ABANDONAR SALA</button>
-
     </div>
-
-
   </div>
 </div>

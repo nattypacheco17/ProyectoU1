@@ -213,8 +213,21 @@ button {
 }
 .cancel-button{
   font-weight: bold;
-
 }
+
+.game-code-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
+  z-index: 10; /* Asegura que esté encima */
+  overflow-x: hidden; /* Evita el desbordamiento horizontal */
+}
+
 
 /* Asegura que la animación del fondo funcione en todos los dispositivos */
 @keyframes zoom-background {
