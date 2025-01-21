@@ -1,0 +1,26 @@
+<div *ngIf="showInstructions" class="instructions-overlay">
+    <div class="instructions-content">
+      <p><strong>1.</strong> El juego consta de 7 rondas, cada una con un objetivo específico para "bajarse" (mostrar combinaciones).</p>
+      <p><strong>2.</strong> Se utilizan 2 barajas estándar (108 cartas). Los comodines y los doses actúan como comodines.</p>
+      <p><strong>3.</strong> En cada turno, toma una carta del mazo o del montón de descartes y descarta una.</p>
+      <p><strong>4.</strong> Objetivo por rondas:</p>
+      <ul>
+        <li>Ronda 1: Un trío (3 cartas del mismo valor).</li>
+        <li>Ronda 2: Dos tríos.</li>
+        <li>Ronda 3: Un cuarteto (4 cartas del mismo valor).</li>
+        <li>Ronda 4: Dos cuartetos.</li>
+        <li>Ronda 5: Un quinteto (5 cartas del mismo valor).</li>
+        <li>Ronda 6: Dos quintetos.</li>
+        <li>Ronda 7: Una escalera de 7 o más cartas consecutivas del mismo palo.</li>
+      </ul>
+      <p><strong>5.</strong> Minimiza los puntos acumulados al final del juego:</p>
+      <ul>
+        <li>Cartas del 2 al 9: 5 puntos.</li>
+        <li>Cartas del 10 al K: 10 puntos.</li>
+        <li>Ases: 15 puntos.</li>
+        <li>Comodines: 20 puntos.</li>
+      </ul>
+      <p style="text-align: center;">¡Diviértete jugando Telefunken!</p>
+      <button class="close-button" (click)="closeInstructions()">Cerrar</button>
+    </div>
+  </div>  

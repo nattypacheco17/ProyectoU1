@@ -5,7 +5,7 @@
       <div class="avatar-frame">
         <img src="assets/avatar.jpg" alt="Avatar" class="avatar-img" />
       </div>
-      <button class="instructions-button" (click)="showInstructions()">INSTRUCCIONES</button>
+      <button class="instructions-button" (click)="toggleInstructions()">INSTRUCCIONES</button>
     </div>
 
     <!-- Título -->
@@ -43,6 +43,13 @@
       <button class="text-black text-2xl" style="margin-top: 1rem; padding: 8px 15px; min-width: auto;" routerLink="/">
         <i class="fas fa-arrow-left"></i>
       </button>
+    </div>
+  </div>
+
+  <!-- Modal de instrucciones -->
+  <div *ngIf="showInstructions" class="modal-overlay">
+    <div class="modal-content">
+      <app-instructions></app-instructions>
     </div>
   </div>
 </div>
