@@ -166,21 +166,20 @@
 
 
 
-/* Contenedor del avatar y el botón */
 .player-avatar-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Centrar el contenido horizontalmente */
   align-items: center;
+  gap: 20px; /* Añadir espacio entre el avatar y el botón */
   margin: 20px 0;
 }
 
-/* Estilo del marco redondo para el avatar */
 .avatar-frame {
   width: 70px;
   height: 70px;
-  background-color: #9859f7; /* Morado */
+  background-color: #9859f7;
   border-radius: 50%;
-  overflow: hidden; /* Esconde cualquier parte de la imagen fuera del círculo */
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -189,7 +188,14 @@
 .avatar-img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Asegura que la imagen se ajuste correctamente dentro del círculo */
+  object-fit: cover;
+}
+
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Estilo del botón de instrucciones */
