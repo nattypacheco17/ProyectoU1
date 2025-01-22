@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { GameCodeComponent } from '../game-code/game-code.component';
-import Swal from 'sweetalert2'; // Instalar en la consola con npm install sweetalert2 e importar en el componente
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-sala-espera',
