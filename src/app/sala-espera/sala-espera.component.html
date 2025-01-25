@@ -6,9 +6,11 @@
 </div>
 
   <div *ngIf="!showPlayerNameForm" class="container">
+     <!-- Componente del selector de avatar -->
+     <app-avatar-selector (avatarSelected)="onAvatarSelected($event)"></app-avatar-selector>
     <div class="player-avatar-container">
       <div class="avatar-frame">
-        <img src="assets/avatar.jpg" alt="Avatar" class="avatar-img" />
+        <img [src]="'assets/' + selectedAvatar" alt="Avatar seleccionado" class="avatar-img" />
       </div>
       <button class="instructions-button" (click)="toggleInstructions()">INSTRUCCIONES</button>
     </div>
