@@ -4,16 +4,18 @@ import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { PlayerNameNumberComponent } from '../player-name-number/player-name-number.component';
 import { AvatarSelectorComponent } from '../avatar-selector/avatar-selector.component';
+import { InstructionsComponent } from '../instructions/instructions.component';
 
 @Component({
   selector: 'app-componente2',
   standalone: true,
-  imports: [RouterLink, CommonModule, FormsModule, PlayerNameNumberComponent, AvatarSelectorComponent],
+  imports: [RouterLink, CommonModule, FormsModule, PlayerNameNumberComponent, AvatarSelectorComponent, InstructionsComponent],
   templateUrl: './componente2.component.html',
   styleUrls: ['./componente2.component.css']
 })
 
 export class Componente2Component {
+  showInstructions = false;
   showPlayerNameForm: boolean = true; // Estado inicial
   playerName: string = '';
   participants: string = '';
@@ -48,8 +50,8 @@ export class Componente2Component {
     this.selectedAvatar = avatar; // Guardar el avatar seleccionado
   }
 
-  showInstructions() {
-    alert('Aquí van las instrucciones del juego.');
+  toggleInstructions() {
+    this.showInstructions = !this.showInstructions;
   }
 
   // Función para copiar el código
