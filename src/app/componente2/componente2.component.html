@@ -41,7 +41,7 @@
       <div class="invite-code">{{ gameCode }}</div>
       <div>
         <button (click)="copyCode()" class="copy-button">COPIAR</button>
-        <button class="cancel-button" routerLink="/tabla" style="margin-left: 10px;">JUGAR</button>
+        <button class="cancel-button" (click)="startGame()"style="margin-left: 10px;">JUGAR</button>
         <button class="cancel-button" routerLink="/" style="margin-left: 10px;">CANCELAR</button>
       </div>
 

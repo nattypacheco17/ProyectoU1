@@ -26,7 +26,7 @@
     <!-- Instrucción e input Codigo -->
     <div class="name-input">
       <p class="description"> Introduce el código del juego </p>
-      <input placeholder="Código" type="text" [(ngModel)]="gameCode" (input)="updateCharacterCount()" maxlength="6" />
+      <input placeholder="Código" type="text" [(ngModel)]="gameCode" (input)="updateCharacterCount(); emitirCodigoSala()" maxlength="6" />
       <div class="text-gray-500 mt-1">{{ characterCount }} / 6</div>
     </div>
 

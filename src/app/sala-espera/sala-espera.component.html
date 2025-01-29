@@ -2,7 +2,8 @@
 
 <!-- Mostrar el formulario de nombre y número de jugadores -->
 <div *ngIf="showPlayerNameForm" class="game-code-container">
-  <app-game-code (nombre) = 'recibirNombre($event)'></app-game-code>
+  <app-game-code (nombre)="recibirNombre($event)" (codigoSala)="recibirCodigo($event)"></app-game-code>
+
 </div>
 
   <div *ngIf="!showPlayerNameForm" class="container">
@@ -22,6 +23,7 @@
       <img src="../../assets/LogoTelefunken.png" alt="Logo with playing cards" class="logo" />
     </div>
     <p>Nombre del jugador: {{ nombreRecibido }}</p>
+    <p>Te uniste a la sala: {{ CodigoRecibido }}</p>
 
     <p class="description">Espera que el anfitrión inicie el juego</p>
     <div class="loading-dots"></div>

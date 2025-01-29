@@ -20,9 +20,12 @@ export class GameCodeComponent {
   showInstructions = false;
 
   @Output() nombre = new EventEmitter<string>();
+  @Output() codigoSala = new EventEmitter<string>();
+
 
   enviarNombre() {
     this.nombre.emit(this.nombreJugador);
+    this.codigoSala.emit(this.gameCode);
   }
 
   validateName() {
@@ -42,6 +45,9 @@ export class GameCodeComponent {
 
   updateCharacterCount(): void {
     this.characterCount = this.gameCode.length;
+  }
+  emitirCodigoSala() {
+    this.codigoSala.emit(this.gameCode);
   }
 
   isValidCode(): boolean {
