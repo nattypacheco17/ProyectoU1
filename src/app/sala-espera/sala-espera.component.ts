@@ -52,6 +52,7 @@ export class SalaEsperaComponent {
     Swal.fire('¡El juego ha comenzado!', '', 'success');
     this.router.navigate(['/tabla']);
   });
+
   }
 
   // Método para manejar los datos recibidos

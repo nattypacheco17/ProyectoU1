@@ -7,10 +7,20 @@ import { Observable } from 'rxjs';
 })
 export class SocketService {
   private socket: Socket;
+  private playerData: { name: string; participants: number } = { name: '', participants: 0 };
 
   constructor() {
     // Inicializa el socket con la URL del servidor
     this.socket = io('http://localhost:3000');  // Cambia la URL por la de tu servidor
+  }
+
+  setPlayerData(name: string, participants: number) {
+    this.playerData.name = name;
+    this.playerData.participants = participants;
+  }
+
+  getPlayerData() {
+    return this.playerData;
   }
 
   // Unirse a la tabla
@@ -36,7 +46,7 @@ export class SocketService {
   // Iniciar el juego
   startGame(gameCode: string) {
     this.socket.emit('startGame', gameCode);
-    
+
   }
   // Escuchar cuando un jugador se une
   onPlayerJoined(callback: (playerData: any) => void): void {
