@@ -24,7 +24,7 @@ export class Componente2Component {
   participants: string = '';
   gameCode: string = this.generateGameCode();
   selectedAvatar: string = '';
-  avatars: string[] = [
+ avatars: string[] = [
     'avatar1.jpg', 'avatar2.jpg', 'avatar3.jpg',
     'avatar4.jpg', 'avatar5.jpg', 'avatar6.jpg'
   ];

@@ -168,15 +168,6 @@ h1 {
   z-index: 9999; /* Coloca el modal por encima de otros elementos */
 }
 
-/* Estilo del contenido del modal */
-.modal-content {
-  text-align: center;
-  background-color: #faf3ff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  animation: fadeIn 1s ease; /* Animación de aparición */
-}
 
 /* Estilo de la imagen del modal */
 .poker-img {
@@ -274,3 +265,15 @@ body.modal-active .container {
   background-repeat: no-repeat;
   animation: wave-background 15s ease-in-out infinite;
 }
+/* Centrar el contenedor del botón de instrucciones */
+.player-avatar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+
+
+
