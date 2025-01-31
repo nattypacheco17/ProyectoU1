@@ -56,6 +56,18 @@ export class Componente2Component {
     this.showPlayerNameForm = false;
     console.log('Intentando unirse a la sala con código:', this.gameCode); // Log para verificar
     this.socketService.joinRoom(this.gameCode, this.playerName);
+
+
+
+
+    // Guardar los datos en el servicio
+    this.socketService.setPlayerData({
+      name: this.playerName,
+      participants: parseInt(this.participants, 10),
+    });
+
+    // Unirse a la sala
+    this.socketService.joinRoom(this.gameCode, this.playerName);
   }
 
 

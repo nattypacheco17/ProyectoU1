@@ -6,10 +6,8 @@
     </div>
   </div>
 
-
   <!-- Contenedor principal con el contenido de la página -->
   <div class="container">
-
     <!-- Logo y título -->
     <div>
       <!-- Nueva sección con avatar y botón -->
@@ -28,7 +26,8 @@
     <table class="tabla">
       <thead>
         <tr>
-          <th></th> <!-- Columna vacía para la fila de nombres -->
+          <th></th>
+          <!-- Columna vacía para la fila de nombres -->
           <th *ngFor="let jugador of jugadores" class="jugador-header">{{ jugador }}</th>
         </tr>
       </thead>
@@ -36,9 +35,13 @@
         <tr *ngFor="let fila of filas; let i = index">
           <td class="especial">{{ fila }}</td>
           <td *ngFor="let jugador of jugadores; let j = index" class="input-container">
-            <input type="number" class="input-puntos"
+            <input
+              type="number"
+              class="input-puntos"
               [value]="puntos[j][i] === 0 ? '' : puntos[j][i]"
-              (input)="actualizarPuntos(j, i, $event)" min="1" />
+              (input)="actualizarPuntos(j, i, $event)"
+              min="1"
+            />
           </td>
         </tr>
 
@@ -46,13 +49,20 @@
         <tr class="total-row">
           <td class="especial">Total</td>
           <td *ngFor="let total of totales" class="input-container">
-            <input type="text" [value]="total === 0 ? '-' : total" class="input-puntos total" readonly />
+            <input
+              type="text"
+              [value]="total === 0 ? '-' : total"
+              class="input-puntos total"
+              readonly
+            />
           </td>
         </tr>
       </tbody>
     </table>
 
     <!-- Botón que redirige a la página de los ganadores -->
-    <button class="boton-ganadores" (click)="verGanadores()" routerLink="/componente5">Ver Ganadores</button>
+    <button class="boton-ganadores" (click)="verGanadores()" routerLink="/componente5">
+      Ver Ganadores
+    </button>
   </div>
-  </div>
+</div>

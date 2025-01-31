@@ -3,7 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { InstructionsComponent } from '../instructions/instructions.component';
-
+import { SocketService } from '../service-socket.service'; // Importar el servicio de sockets
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-game-code',
   standalone: true,
@@ -21,11 +22,18 @@ export class GameCodeComponent {
 
   @Output() nombre = new EventEmitter<string>();
   @Output() codigoSala = new EventEmitter<string>();
+  constructor(private socketService: SocketService,  private router: Router) { } // Inyectar el servicio de sockets
 
 
   enviarNombre() {
     this.nombre.emit(this.nombreJugador);
     this.codigoSala.emit(this.gameCode);
+
+    // Guardar los datos en el servicio
+    this.socketService.setPlayerData({
+      name: this.nombreJugador,
+      participants: 0, // Ajusta esto según tu lógica
+    });
   }
 
   validateName() {

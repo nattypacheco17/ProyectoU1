@@ -18,32 +18,35 @@ export class TablaComponent implements OnInit {
   puntos: number[][] = [];
   totales: number[] = [];
   mostrarModal: boolean = true; // Inicialmente el modal está visible
-  players: any[] = [];  // Aquí almacenamos la lista de jugadores
 
 
   constructor(private router: Router, private socketService: SocketService) { }
 
   ngOnInit(): void {
-    const state = history.state;
     const playerData = this.socketService.getPlayerData();
 
-    if (state.jugadores && state.cantidad) {
-      this.jugadores = state.jugadores.split(',');
-      this.cantidad = Number(state.cantidad);
-    }
-    // Inicializar los jugadores y la cantidad
-    this.jugadores = [playerData.name];  // Agregar el nombre del jugador
-    this.cantidad = playerData.participants;  // Cantidad de jugadores
+    // Inicializar jugadores y cantidad
+    this.jugadores = Array(playerData.participants)
+    .fill('Jugador')
+    .map((_, index) => `Jugador ${index + 1}`); // Nombres de jugadores
+  this.cantidad = playerData.participants; // Cantidad de jugadores
 
     // Inicializar matriz de puntos
-    this.puntos = Array(this.cantidad).fill(null).map(() => Array(this.filas.length).fill(0));
-    this.totales = Array(this.cantidad).fill(0);
- 
+    this.puntos = Array(this.cantidad)
+    .fill(null)
+    .map(() => Array(this.filas.length).fill(0));
+  this.totales = Array(this.cantidad).fill(0);
 
     // Cerrar el modal después de 3 segundos
     setTimeout(() => {
       this.mostrarModal = false;
     }, 2000);
+
+  // Escuchar actualizaciones de la tabla
+  this.socketService.onTableUpdate().subscribe((updatedData: any) => {
+    this.puntos = updatedData.puntos;
+    this.totales = updatedData.totales;
+  });
   }
 
   calcularTotal(jugador: number): void {
@@ -54,6 +57,10 @@ export class TablaComponent implements OnInit {
     const valor = parseInt(event.target.value, 10) || 0;
     this.puntos[jugadorIndex][filaIndex] = valor;
     this.calcularTotales();
+
+    // Enviar la actualización a la sala
+    const gameCode = this.socketService.getCurrentRoomCode();
+    this.socketService.updateTable(gameCode, { puntos: this.puntos, totales: this.totales });
   }
 
   calcularTotales() {

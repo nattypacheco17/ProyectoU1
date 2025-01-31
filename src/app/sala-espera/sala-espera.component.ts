@@ -43,7 +43,7 @@ export class SalaEsperaComponent {
     this.avatarSelected.emit(this.selectedAvatar); // Emitir el avatar seleccionado
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.selectRandomAvatar(); // Selecciona un avatar aleatorio cuando el componente se inicializa
 
     // Escuchar cuando el anfitrión inicia el juego
@@ -70,11 +70,9 @@ export class SalaEsperaComponent {
 
   recibirNombre(nombreJugador: string) {
     this.nombreRecibido = nombreJugador;
-    this.showPlayerNameForm = false;
   }
 
   recibirCodigo(codigoSala: string) {
-    console.log('Código recibido:', codigoSala);
     this.CodigoRecibido = codigoSala;
 
     // Unirse a la sala con el código recibido

@@ -14,9 +14,8 @@ export class SocketService {
     this.socket = io('http://localhost:3000');  // Cambia la URL por la de tu servidor
   }
 
-  setPlayerData(name: string, participants: number) {
-    this.playerData.name = name;
-    this.playerData.participants = participants;
+  setPlayerData(data: { name: string; participants: number }) {
+    this.playerData = data;
   }
 
   getPlayerData() {
@@ -59,30 +58,19 @@ export class SocketService {
       this.socket.on('gameStarted', () => {
         observer.next();
       });
-
-      // Limpieza de la suscripción
-      return () => this.socket.off('gameStarted');
     });
+  }
+
+   // Enviar actualización a la tabla
+   updateTable(gameCode: string, updatedData: any) {
+    this.socket.emit('updateTable', gameCode, updatedData);
   }
 
   // Escuchar las actualizaciones de la tabla
-  onTableUpdate(): Observable<unknown> {
+  onTableUpdate(): Observable<any> {
     return new Observable(observer => {
-      this.socket.on('tableUpdated', (data: unknown) => observer.next(data));
-
-      // Limpieza de la suscripción
-      return () => this.socket.off('tableUpdated');
+      this.socket.on('tableUpdated', (data: any) => observer.next(data));
     });
-  }
-
-
-  // Enviar actualización a la tabla
-  updateTable(tableId: string, updatedData: any) {
-    if (tableId && updatedData) {
-      this.socket.emit('updateTable', tableId, updatedData);
-    } else {
-      console.error('❌ El ID de la tabla y los datos actualizados son necesarios');
-    }
   }
 
   // Obtener el código de sala actual (puedes implementarlo en base a la lógica de tu app)
