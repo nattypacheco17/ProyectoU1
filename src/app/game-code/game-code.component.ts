@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { InstructionsComponent } from '../instructions/instructions.component';
 import { SocketService } from '../service-socket.service'; // Importar el servicio de sockets
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2'; // Para mostrar modales
 @Component({
   selector: 'app-game-code',
   standalone: true,
@@ -19,6 +20,8 @@ export class GameCodeComponent {
   nameError: string = '';
   nombreJugador: string = '';
   showInstructions = false;
+  showWaitingModal = false; // Controlar la visibilidad del modal de espera
+
 
   @Output() nombre = new EventEmitter<string>();
   @Output() codigoSala = new EventEmitter<string>();
@@ -26,13 +29,26 @@ export class GameCodeComponent {
 
 
   enviarNombre() {
+    if (!this.nombreJugador || !this.gameCode) {
+      Swal.fire('Error', 'Por favor ingresa tu nombre y el código de la sala.', 'error');
+      return;
+    }
+
+    // Emitir los datos del jugador
     this.nombre.emit(this.nombreJugador);
     this.codigoSala.emit(this.gameCode);
 
-    // Guardar los datos en el servicio
-    this.socketService.setPlayerData({
-      name: this.nombreJugador,
-      participants: 0, // Ajusta esto según tu lógica
+    // Unirse a la sala
+    this.socketService.joinRoom(this.gameCode, this.nombreJugador);
+
+    // Mostrar el modal de espera
+    this.showWaitingModal = true;
+
+    // Escuchar cuando el juego comienza
+    this.socketService.onGameStart().subscribe(() => {
+      Swal.fire('¡El juego ha comenzado!', '', 'success').then(() => {
+        this.router.navigate(['/tabla']);
+      });
     });
   }
 

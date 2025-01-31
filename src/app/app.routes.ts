@@ -6,7 +6,6 @@ import { PrincipalComponent } from './principal/principal.component';
 import { TablaComponent } from './tabla/tabla.component';
 import { Componente5Component } from './componente5/componente5.component';
 import { PlayerNameNumberComponent } from './player-name-number/player-name-number.component';
-import {SalaEsperaComponent} from './sala-espera/sala-espera.component';
 
 export const routes: Routes = [
   { path: '', component: PrincipalComponent},
@@ -15,7 +14,6 @@ export const routes: Routes = [
   { path: 'game-code', component: GameCodeComponent},
   { path: 'componente5', component: Componente5Component},
   { path: 'PlayerNameNumber', component: PlayerNameNumberComponent},
-  { path: 'sala-espera', component: SalaEsperaComponent}
 
 ];
 

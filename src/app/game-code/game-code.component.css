@@ -152,6 +152,56 @@ button {
 .instructions-button:focus {
   outline: none;
 }
+/* Estilos para el modal */
+.modal-overlay {
+  position: fixed; /* Fija el modal en la pantalla */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  z-index: 1000; /* Asegura que el modal esté por encima de todo */
+}
+
+.modal-content {
+  background-color: white; /* Fondo blanco */
+  padding: 20px;
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+  max-width: 400px; /* Ancho máximo del modal */
+  width: 90%; /* Ancho relativo */
+  text-align: center; /* Centra el texto */
+}
+
+.modal-content h2 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #333; /* Color del texto */
+}
+
+.modal-content p {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #555; /* Color del texto */
+}
+
+.cancel-button {
+  background-color: #6b41b6; /* Color de fondo del botón */
+  color: white; /* Color del texto del botón */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 15px;
+}
+
+.cancel-button:hover {
+  background-color: #9859f7; /* Cambia el color al pasar el mouse */
+}
 /* Animación de movimiento suave para el fondo */
 @keyframes move-background {
   0% {

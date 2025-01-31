@@ -15,24 +15,35 @@
     </div>
 
     <!-- Instrucción e input nombre -->
-    <p class="description "> Ingresa tu nombre </p>
-    <input type="text" [(ngModel)]="nombreJugador" (input)="validateName()" placeholder="Tu nombre"
-      class="form-control" />
+    <p class="description"> Ingresa tu nombre </p>
+    <input
+      type="text"
+      [(ngModel)]="nombreJugador"
+      (input)="validateName()"
+      placeholder="Tu nombre"
+      class="form-control"
+    />
 
     <p class="validation-message" *ngIf="nameError">
       {{ nameError }}
     </p>
 
-    <!-- Instrucción e input Codigo -->
+    <!-- Instrucción e input Código -->
     <div class="name-input">
       <p class="description"> Introduce el código del juego </p>
-      <input placeholder="Código" type="text" [(ngModel)]="gameCode" (input)="updateCharacterCount(); emitirCodigoSala()" maxlength="6" />
+      <input
+        placeholder="Código"
+        type="text"
+        [(ngModel)]="gameCode"
+        (input)="updateCharacterCount(); emitirCodigoSala()"
+        maxlength="6"
+      />
       <div class="text-gray-500 mt-1">{{ characterCount }} / 6</div>
     </div>
 
     <!-- Botón principal -->
-    <button (click)="enviarNombre()" routerLink="/SalaEspera" [disabled]="!isValidCode()"
-      [ngClass]="{'button-disabled': !isValidCode()}">JUGAR
+    <button (click)="enviarNombre()" [disabled]="!isValidCode()" [ngClass]="{'button-disabled': !isValidCode()}">
+      JUGAR
     </button>
 
     <!-- Botón de retroceso -->
@@ -47,6 +58,16 @@
   <div *ngIf="showInstructions" class="modal-overlay">
     <div class="modal-content">
       <app-instructions></app-instructions>
+    </div>
+  </div>
+
+  <!-- Modal de espera -->
+  <div *ngIf="showWaitingModal" class="modal-overlay">
+    <div class="modal-content">
+      <h2>Esperando a que el anfitrión inicie el juego...</h2>
+      <p>Nombre del jugador: {{ nombreJugador }}</p>
+      <p>Código de la sala: {{ gameCode }}</p>
+      <button class="cancel-button" (click)="showWaitingModal = false">CERRAR</button>
     </div>
   </div>
 </div>
